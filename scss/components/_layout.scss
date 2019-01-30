@@ -62,9 +62,9 @@ body {
 .site__main {
   grid-row: 2;
   grid-column: 1;
-  // display: flex;
-  // flex-flow: column;
-  // justify-content: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 
   @include large-breakpoint {
     grid-row: 2;
