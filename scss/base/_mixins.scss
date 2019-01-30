@@ -22,3 +22,8 @@
   }
 }
 
+@mixin portrait-breakpoint {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
