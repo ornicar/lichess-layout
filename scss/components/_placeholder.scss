@@ -18,7 +18,10 @@
 
 .game__table {
   width: 100%;
-  flex: 0 0 300px;
+  flex: 0 0 200px;
+  @include tall-breakpoint {
+    flex: 0 0 300px;
+  }
 }
 .game__clock {
   background: #d0d0d0;
