@@ -1,0 +1,8 @@
+// Reset box sizing to border box
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}

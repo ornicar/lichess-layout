@@ -1,0 +1,29 @@
+/* Scaffolding
+=============== */
+
+// HTML base
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
+  font-size: $font-size;
+}
+
+// Body base
+body {
+  color: $font-color;
+  background: $background;
+  font-size: $body-font-size;
+}
+
+// Link styling
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}

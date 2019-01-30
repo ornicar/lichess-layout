@@ -1,0 +1,13 @@
+.site__main-nav ul {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.site__main-nav li {
+  list-style: none;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  line-height: 30px;
+}

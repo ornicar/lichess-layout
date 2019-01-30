@@ -1,0 +1,35 @@
+.placeholder {
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.game__info {
+  width: 100%;
+  flex: 1 1 120px;
+}
+.game__chat {
+  margin-top: $block-gap;
+  width: 100%;
+  flex: 1 1 100%;
+}
+
+.game__table {
+  width: 100%;
+  flex: 0 0 300px;
+}
+.game__clock {
+  background: #d0d0d0;
+  height: 80px;
+  width: 70%;
+}
+
+.game__crosstable {
+  height: 100px;
+}
+.game__others {
+  margin-top: $block-gap;
+  height: 300px;
+}
