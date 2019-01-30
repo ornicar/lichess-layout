@@ -66,3 +66,5 @@ Cons:
 because it makes it harder to read them both at a glance.
 - having clocks next to the board (as opposed to around the board)
 has always been in lichess DNA.
+- side clocks can be very large, there is room for it.
+They're not competing with the board for vertical space.
