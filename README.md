@@ -23,7 +23,14 @@ The page will update on save as long as `gulp` is running.
 - The clocks must be above floating point.
 - In 3 columns mode, the full chat and chat input should be above floating point.
 
+### Non-goals
+
+- width  < 550px
+- height < 400px
+
 ## Notes
+
+### Square board
 
 Having a square element (the board) is difficult to do in CSS.
 That's the main challenge of this layout experiment.
@@ -45,6 +52,8 @@ It requires displaying the layout in order for JavaScript
 to measure distances, then changing elements sizes, and finally
 redisplay the whole layout, causing reflows and slowing down
 the page. Any pure CSS solution would be preferable to that.
+
+### Clocks
 
 I don't think it's possible to move the clocks and board controls
 from the right side to the top and bottom of the board, with just CSS.
