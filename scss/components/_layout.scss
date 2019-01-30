@@ -20,7 +20,7 @@ body {
   grid-column-gap: $block-gap;
   grid-row-gap: $block-gap;
 
-  @include large-breakpoint {
+  @include breakpoint($large) {
 
     grid-template-columns:
     minmax(0, 1fr)
@@ -39,7 +39,7 @@ body {
   display: none;
   margin: 0;
   font-size: 20px;
-  @include large-breakpoint {
+  @include breakpoint($large) {
     display: block;
     grid-column: 2;
   }
@@ -54,7 +54,7 @@ body {
 
 .site__main-nav {
   grid-column: 1;
-  @include large-breakpoint {
+  @include breakpoint($large) {
     grid-column: 3;
   }
 }
@@ -63,11 +63,11 @@ body {
   grid-row: 2;
   grid-column: 1;
 
-  @include large-breakpoint {
+  @include breakpoint($large) {
     grid-row: 2;
     grid-column: 3;
   }
-  @include portrait-breakpoint {
+  @include breakpoint($portrait) {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -85,7 +85,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
 
-  @include large-breakpoint {
+  @include breakpoint($large) {
     grid-column: 2;
     grid-row: 2;
   }
@@ -98,7 +98,7 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
 
-  @include large-breakpoint {
+  @include breakpoint($large) {
     grid-column: 4;
     grid-row: 2;
   }
@@ -108,7 +108,7 @@ body {
   grid-column: 1;
   grid-row: 3;
 
-  @include large-breakpoint {
+  @include breakpoint($large) {
     grid-column: 3;
     grid-row: 3;
   }

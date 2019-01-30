@@ -1,10 +1,16 @@
 /* Widths */
-$x-small: 600px;
-$small: 800px;
-$medium: 1000px;
-$large: 1200px;
+$x-small: (min-width 600px);
+$small: (min-width 800px);
+$medium: (min-width 1000px);
+$large: (min-width 1200px);
+
 /* Heights */
-$tall: 520px;
+$short: (min-height 500px);
+$tall: (min-height 600px);
+
+$room-for-moves: (min-width 680px) (min-height 480px);
+
+$portrait: (orientation: portrait);
 
 $block-gap: 2.5vmin;
 

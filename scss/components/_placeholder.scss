@@ -4,29 +4,39 @@
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  outline: 1px solid #aaa;
 }
 
 .game__info {
-  width: 100%;
   flex: 1 1 120px;
 }
-.game__chat {
+.chat__lines {
   margin-top: $block-gap;
-  width: 100%;
   flex: 1 1 100%;
 }
+.chat__input {
+  flex: 0 0 40px;
+}
 
-.game__table {
-  width: 100%;
-  flex: 0 0 200px;
-  @include tall-breakpoint {
-    flex: 0 0 300px;
+.game__moves {
+  background: hsl(138, 37%, 80%);
+  display: none;
+  @include breakpoint($room-for-moves) {
+    display: flex;
+    flex: 0 0 90px;
   }
 }
+.game__actions {
+  flex: 0 0 70px;
+}
 .game__clock {
-  background: #d0d0d0;
+  background: #ddd;
   height: 80px;
   width: 70%;
+}
+.game__player {
+  background: #d0d0d0;
+  height: 40px;
 }
 
 .game__crosstable {
