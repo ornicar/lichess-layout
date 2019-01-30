@@ -15,8 +15,6 @@ body {
 
   grid-template-rows:
   $grid-header
-  // minmax(200px, var(--board-size))
-  var(--board-size)
   auto;
 
   grid-column-gap: $block-gap;
@@ -33,7 +31,6 @@ body {
 
     grid-template-rows:
     $grid-header
-    minmax(200px, var(--board-size))
     auto;
   }
 }
