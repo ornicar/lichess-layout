@@ -15,8 +15,13 @@ The page will update on save as long as `gulp` is running.
 
 ## Goals
 
-Responsive layout from 1 to 3 columns.
-The board should occupy as much space as possible.
+- Only play page for now.
+- Responsive layout from 1 (or 2?) to 3 columns.
+- Handle large desktop screens, all the way to tiny vertical cell phone.
+- The board should occupy as much space as possible.
+- The entire board must be above floating point.
+- The clocks must be above floating point.
+- In 3 columns mode, the full chat and chat input should be above floating point.
 
 ## Notes
 
@@ -40,3 +45,15 @@ It requires displaying the layout in order for JavaScript
 to measure distances, then changing elements sizes, and finally
 redisplay the whole layout, causing reflows and slowing down
 the page. Any pure CSS solution would be preferable to that.
+
+I don't think it's possible to move the clocks and board controls
+from the right side to the top and bottom of the board, with just CSS.
+In that case, we're stuck to 2 columns.
+
+An alternative is to always have the clocks on top and bottom of the board.
+Like chess.com does.
+Cons:
+- clocks should not be that far away one from another,
+because it makes it harder to read them both at a glance.
+- having clocks next to the board (as opposed to around the board)
+has always been in lichess DNA.
