@@ -1,13 +1,19 @@
-.site__main-nav {
+.site__top {
   display: flex;
   justify-content: space-between;
 }
-.site__main-nav ul {
+.site__top nav {
+  display: none;
+  @include breakpoint($small) {
+    display: block;
+  }
+}
+.site__top ul {
   display: flex;
   align-items: stretch;
   height: 100%;
 }
-.site__main-nav li {
+.site__top li {
   list-style: none;
   padding: 0 1rem;
   text-transform: uppercase;
