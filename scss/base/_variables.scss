@@ -16,9 +16,10 @@ $landscape: (orientation landscape);
 
 $block-gap: 2.5vmin;
 
+
 /* Colors */
 $background: #eeeeee;
-$primary-color: #0366EE;
+$primary-color: #3893E8;
 $secondary-color: #29de7d;
 $accent-color: #cdcdcd;
 $alternate-background: #fafafa;
@@ -37,14 +38,14 @@ $body-font-size: 1rem;
 $font-style: normal;
 $font-variant: normal;
 $font-weight: normal;
-$font-color: #404040;
-$font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-color: #6a6a6a;
+$font-family: 'Noto Sans', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
 $line-height: 1.6;
 
 // Headings
-$heading-font-color: #404040;
+$heading-font-color: $font-color;
 $heading-font-weight: 600;
-$heading-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+$heading-font-family: $font-family;
 $heading-line-height: 1.2;
 
 // Mobile heading font size

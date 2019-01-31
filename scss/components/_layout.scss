@@ -3,21 +3,22 @@
 
 $col-2: $x-small;
 $col-3: $large;
-$grid-header: 30px;
+$grid-header: 60px;
 
 body {
   display: grid;
   margin: 0;
 
-  --board-size: calc(100vh - #{$grid-header} - (#{$block-gap} * 1.5));
-  --scale: 1;
+  --zoom: 75;
+  --scale: calc((var(--zoom) / 100) * 0.6 + 0.4);
+  --board-size: calc(100vh - #{$grid-header});
 
   grid-template-columns: 1fr;
 
   grid-template-rows: $grid-header auto;
 
   grid-column-gap: 0;
-  grid-row-gap: $block-gap;
+  grid-row-gap: 0;
 
   /* 2 columns */
   @include breakpoint($col-2) {
@@ -40,15 +41,17 @@ body {
   grid-row: 1;
   display: none;
   margin: 0;
-  font-size: 20px;
+  font-size: 33px;
+  font-weight: normal;
   @include breakpoint($col-3) {
     display: block;
     grid-column: 2;
   }
+  text-align: end;
 }
 .site__title a {
   color: $font-color;
-  opacity: 0.6;
+  text-decoration: none;
 }
 .site__title__ext {
   opacity: 0.7;
@@ -105,6 +108,7 @@ body {
     grid-row: 3;
   }
   @include breakpoint($col-3) {
+    margin-top: $block-gap;
     grid-column: 3;
     grid-row: 3;
   }
@@ -114,6 +118,7 @@ body {
   display: none;
   height: 200px;
   @include breakpoint($col-3) {
+    margin-top: $block-gap;
     display: flex;
     grid-column: 2;
     grid-row: 3;
@@ -123,6 +128,7 @@ body {
   display: none;
   height: 200px;
   @include breakpoint($col-3) {
+    margin-top: $block-gap;
     display: flex;
     grid-column: 4;
     grid-row: 3;

@@ -11,8 +11,6 @@ function resizeBoard() {
 window.addEventListener('resize', resizeBoard);
 
 document.getElementById('zoom').addEventListener('input', function(e) {
-  const zoom = parseInt(e.target.value);
-  const scale = (zoom / 100) * 0.6 + 0.4;
-  document.body.setAttribute('style', `--scale: ${scale}`);
+  document.body.setAttribute('style', `--zoom: ${parseInt(e.target.value)}`);
   resizeBoard();
 });
