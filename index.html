@@ -4,8 +4,8 @@
     <title>Lichess layout</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"/>
     <link href="assets/css/main.css?2" rel="stylesheet" />
   </head>
   <body class="cburnett blue">
@@ -29,7 +29,8 @@
 
     <div class="site__chess">
       <div class="chess__board">
-        <div class="square orientation-white" id="board"></div>
+        <div class="square cg-board-wrap orientation-white" id="board">
+        </div>
       </div>
       <div class="chess__clock chess__clock-op placeholder">00:45</div>
       <div class="chess__user chess__user-op placeholder">LM Lance5500-YouTube</div>

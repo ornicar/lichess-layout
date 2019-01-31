@@ -22,31 +22,6 @@
 .chat__input {
   flex: 0 0 40px;
 }
-
-.game__moves {
-  background: hsl(138, 37%, 80%);
-  display: none;
-  @include breakpoint($room-for-moves) {
-    display: flex;
-    flex: 0 0 90px;
-  }
-}
-.game__actions {
-  flex: 0 0 70px;
-}
-.game__clock {
-  background: #ddd;
-  height: 80px;
-  width: 100%;
-  @include breakpoint($xx-small) {
-    width: 70%;
-  }
-}
-.game__player {
-  background: #d0d0d0;
-  height: 40px;
-}
-
 .game__crosstable {
   height: 100px;
 }

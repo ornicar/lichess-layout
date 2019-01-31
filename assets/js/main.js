@@ -1,4 +1,5 @@
 const board = document.getElementById('board');
+
 Chessground(board);
 
 window.addEventListener('resize', function() {
