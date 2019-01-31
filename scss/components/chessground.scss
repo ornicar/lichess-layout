@@ -150,39 +150,74 @@
   background-image: url(../img/chessground/board/blue.svg);
 }
 
-.merida .cg-board-wrap piece.pawn.white {
-  background-image: url('../img/chessground/pieces/merida/wP.svg');
+.cburnett .cg-board-wrap piece.pawn.white {
+  background-image: url('../img/chessground/pieces/cburnett/wP.svg');
 }
-.merida .cg-board-wrap piece.bishop.white {
-  background-image: url('../img/chessground/pieces/merida/wB.svg');
+.cburnett .cg-board-wrap piece.bishop.white {
+  background-image: url('../img/chessground/pieces/cburnett/wB.svg');
 }
-.merida .cg-board-wrap piece.knight.white {
-  background-image: url('../img/chessground/pieces/merida/wN.svg');
+.cburnett .cg-board-wrap piece.knight.white {
+  background-image: url('../img/chessground/pieces/cburnett/wN.svg');
 }
-.merida .cg-board-wrap piece.rook.white {
-  background-image: url('../img/chessground/pieces/merida/wR.svg');
+.cburnett .cg-board-wrap piece.rook.white {
+  background-image: url('../img/chessground/pieces/cburnett/wR.svg');
 }
-.merida .cg-board-wrap piece.queen.white {
-  background-image: url('../img/chessground/pieces/merida/wQ.svg');
+.cburnett .cg-board-wrap piece.queen.white {
+  background-image: url('../img/chessground/pieces/cburnett/wQ.svg');
 }
-.merida .cg-board-wrap piece.king.white {
-  background-image: url('../img/chessground/pieces/merida/wK.svg');
+.cburnett .cg-board-wrap piece.king.white {
+  background-image: url('../img/chessground/pieces/cburnett/wK.svg');
 }
-.merida .cg-board-wrap piece.pawn.black {
-  background-image: url('../img/chessground/pieces/merida/bP.svg');
+.cburnett .cg-board-wrap piece.pawn.black {
+  background-image: url('../img/chessground/pieces/cburnett/bP.svg');
 }
-.merida .cg-board-wrap piece.bishop.black {
-  background-image: url('../img/chessground/pieces/merida/bB.svg');
+.cburnett .cg-board-wrap piece.bishop.black {
+  background-image: url('../img/chessground/pieces/cburnett/bB.svg');
 }
-.merida .cg-board-wrap piece.knight.black {
-  background-image: url('../img/chessground/pieces/merida/bN.svg');
+.cburnett .cg-board-wrap piece.knight.black {
+  background-image: url('../img/chessground/pieces/cburnett/bN.svg');
 }
-.merida .cg-board-wrap piece.rook.black {
-  background-image: url('../img/chessground/pieces/merida/bR.svg');
+.cburnett .cg-board-wrap piece.rook.black {
+  background-image: url('../img/chessground/pieces/cburnett/bR.svg');
 }
-.merida .cg-board-wrap piece.queen.black {
-  background-image: url('../img/chessground/pieces/merida/bQ.svg');
+.cburnett .cg-board-wrap piece.queen.black {
+  background-image: url('../img/chessground/pieces/cburnett/bQ.svg');
 }
-.merida .cg-board-wrap piece.king.black {
-  background-image: url('../img/chessground/pieces/merida/bK.svg');
+.cburnett .cg-board-wrap piece.king.black {
+  background-image: url('../img/chessground/pieces/cburnett/bK.svg');
+}
+
+/* inner coords */
+.cg-board-wrap coords {
+  color: #fff;
+  text-shadow: 0 1px 2px #000;
+}
+.cg-board-wrap coords.files {
+  bottom: 0px;
+  text-align: left;
+}
+.cg-board-wrap coords.files coord {
+  padding-left: 2px;
+}
+.cg-board-wrap coords.ranks {
+  right: -4px;
+  text-align: left;
+}
+.cg-board-wrap coords.ranks coord {
+  transform: none;
+}
+.brown coord, .green coord, .blue coord {
+  text-shadow: none;
+}
+.blue .orientation-white .files coords:nth-child(2n+1),
+.blue .orientation-white .ranks coords:nth-child(2n),
+.blue .orientation-black .files coords:nth-child(2n),
+.blue .orientation-black .ranks coords:nth-child(2n+1) {
+  color: #DEE3E6;
+}
+.blue .orientation-white .files coord:nth-child(2n),
+.blue .orientation-white .ranks coord:nth-child(2n+1),
+.blue .orientation-black .files coord:nth-child(2n+1),
+.blue .orientation-black .ranks coord:nth-child(2n) {
+  color: #788a94;
 }

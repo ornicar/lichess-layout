@@ -1,4 +1,4 @@
-$col-2: $xx-small;
+$col-2: $x-small;
 
 .site__chess {
 
@@ -10,9 +10,10 @@ $col-2: $xx-small;
   grid-template-rows: 60px auto 60px 40px 60px;
 
   @include breakpoint($col-2) {
-    --board-size: calc(100vh - #{$grid-header} - (#{$block-gap} * 1.5));
-    grid-template-columns: minmax(200px, var(--board-size)) $block-gap auto;
-    grid-template-rows: auto 60px 40px 60px 40px 40px 60px auto;
+    --board-size: calc(100vh - #{$grid-header} - #{$block-gap});
+    grid-template-columns: auto minmax(200px, var(--board-size)) minmax(120px, 300px) auto;
+    grid-template-rows: auto 60px 40px auto 40px 40px 60px auto;
+    grid-column-gap: $block-gap;
   }
 }
 
@@ -20,7 +21,7 @@ $col-2: $xx-small;
   grid-column: 1 / 3;
   grid-row: 2;
   @include breakpoint($col-2) {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1 / 9;
   }
 }
@@ -84,6 +85,8 @@ $col-2: $xx-small;
 .chess__user {
   white-space: nowrap;
   justify-content: left;
+  padding: 0.5rem;
+  text-transform: none;
 }
 
 .chess__clock {
