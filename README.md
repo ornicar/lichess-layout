@@ -25,8 +25,8 @@ The page will update on save as long as `gulp` is running.
 
 ### Non-goals
 
-- width  < 550px
-- height < 400px
+- width  < 320px (iPhone 5 vertical)
+- height < 320px
 
 ## Notes
 

@@ -12,11 +12,11 @@
 }
 
 .game__info {
-  flex: 1 1 120px;
+  flex: 0 1 120px;
 }
 .chat__lines {
   margin-top: $block-gap;
-  flex: 1 1 100%;
+  flex: 1 1 200px;
 }
 .chat__input {
   flex: 0 0 40px;
@@ -36,7 +36,10 @@
 .game__clock {
   background: #ddd;
   height: 80px;
-  width: 70%;
+  width: 100%;
+  @include breakpoint($xx-small) {
+    width: 70%;
+  }
 }
 .game__player {
   background: #d0d0d0;
