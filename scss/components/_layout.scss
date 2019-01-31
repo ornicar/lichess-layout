@@ -10,6 +10,7 @@ body {
   margin: 0;
 
   --board-size: calc(100vh - #{$grid-header} - (#{$block-gap} * 1.5));
+  --scale: 1;
 
   grid-template-columns: 1fr;
 
@@ -29,7 +30,7 @@ body {
     grid-template-columns:
     minmax(0, 1fr)
     minmax(200px, 300px)
-    minmax(200px, var(--board-size))
+    minmax(200px, calc(var(--board-size) * var(--scale)))
     minmax(240px, 300px)
     minmax(0, 1fr);
   }

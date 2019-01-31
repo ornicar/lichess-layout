@@ -12,7 +12,7 @@ window.addEventListener('resize', resizeBoard);
 
 document.getElementById('zoom').addEventListener('input', function(e) {
   const zoom = parseInt(e.target.value);
-  const border = Math.round((100 - zoom) / 4);
-  board.parentNode.setAttribute("style", `padding: ${border}%;`);
+  const scale = (zoom / 100) * 0.6 + 0.4;
+  document.body.setAttribute('style', `--scale: ${scale}`);
   resizeBoard();
 });
