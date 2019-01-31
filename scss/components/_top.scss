@@ -1,3 +1,6 @@
+$menu-section: 40px;
+$menu-section-hover: 48px;
+
 .site__top {
   display: flex;
   justify-content: space-between;
@@ -20,13 +23,21 @@
   line-height: 30px;
 }
 
+.site__buttons {
+  display: flex;
+  height: 60px;
+  align-items: center;
+}
+.site__buttons .link {
+  color: $font-color;
+  text-decoration: none;
+  padding: 0 0.5rem;
+}
+
 #topmenu a {
   text-decoration: none;
   color: $font-color;
 }
-
-$menu-section: 40px;
-$menu-section-hover: 48px;
 
 #topmenu section {
   position: relative;

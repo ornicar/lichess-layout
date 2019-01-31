@@ -10,7 +10,7 @@ function resizeBoard() {
 
 window.addEventListener('resize', resizeBoard);
 
-document.getElementById('zoom').addEventListener('input', function(e) {
-  document.body.setAttribute('style', `--zoom: ${parseInt(e.target.value)}`);
-  resizeBoard();
-});
+// document.getElementById('zoom').addEventListener('input', function(e) {
+//   document.body.setAttribute('style', `--zoom: ${parseInt(e.target.value)}`);
+//   resizeBoard();
+// });
