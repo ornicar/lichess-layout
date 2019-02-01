@@ -35,17 +35,17 @@ $title-visible: $xx-small;
     line-height: 54px;
     margin: 0 1rem;
   }
-}
-.site__title a {
-  color: $font-color;
-  text-decoration: none;
-  & span {
-    color: dimmer($font-color, 30);
-  }
-  &:hover {
-    color: $primary-color;
+  & a {
+    color: $font-color;
+    text-decoration: none;
     & span {
-      color: dimmer($primary-color, 30);
+      color: dimmer($font-color, 30);
+    }
+    &:hover {
+      color: $primary-color;
+      & span {
+        color: dimmer($primary-color, 30);
+      }
     }
   }
 }
@@ -74,84 +74,6 @@ body > .site__title {
   padding: 0 0.5rem;
 }
 
-.hamburger {
-  position: relative;
-  flex: 0 0 40px;
-  @include breakpoint($short) {
-    flex-basis: 60px;
-  }
-  cursor: pointer;
-}
-
-.hamburger span,
-.hamburger span::after,
-.hamburger span::before {
-  display: block;
-  margin-top: -1.5px;
-  position: absolute;
-  width: 23px;
-  height: 2px;
-  transition-timing-function: ease;
-  transition-duration: .15s;
-  transition-property: transform;
-  border-radius: 3px;
-  background-color: dimmer($font-color);
-  @include breakpoint($short) {
-    width: 34px;
-    height: 3px;
-  }
-}
-.hamburger span {
-  top: 50%;
-  left: 8.5px;
-  @include breakpoint($short) {
-    left: 13px;
-  }
-  transition-duration: 0.22s;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  &::after,
-  &::before {
-    display: block;
-    content: "";
-  }
-  &::before {
-    top: -6px;
-    @include breakpoint($short) {
-      top: -9px;
-    }
-    transition: top 0.1s 0.25s ease-in,
-    opacity 0.1s ease-in;
-  }
-  &::after {
-    bottom: -7px;
-    @include breakpoint($short) {
-      bottom: -10px;
-    }
-    transition: bottom 0.1s 0.25s ease-in,
-    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-}
-.topnav-toggle:checked ~ .hamburger {
-  background: #fff;
-  & span {
-    transform: rotate(225deg);
-    transition-delay: 0.12s;
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    &::before {
-      top: 0;
-      opacity: 0;
-      transition: top 0.1s ease-out,
-      opacity 0.1s 0.12s ease-out;
-    }
-    &::after {
-      bottom: 0;
-      transform: rotate(-90deg);
-      transition: bottom 0.1s ease-out,
-      transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-  }
-}
-
 .topnav-toggle {
   display: none;
 }
@@ -163,6 +85,84 @@ body > .site__title {
     position: absolute;
     top: -9999px;
     left: -9999px;
+  }
+
+  .hamburger {
+    position: relative;
+    flex: 0 0 40px;
+    @include breakpoint($short) {
+      flex-basis: 60px;
+    }
+    cursor: pointer;
+
+    & span,
+    & span::after,
+    & span::before {
+      display: block;
+      margin-top: -1.5px;
+      position: absolute;
+      width: 23px;
+      height: 2px;
+      transition-timing-function: ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      border-radius: 3px;
+      background-color: dimmer($font-color);
+      @include breakpoint($short) {
+        width: 34px;
+        height: 3px;
+      }
+    }
+    & span {
+      top: 50%;
+      left: 8.5px;
+      @include breakpoint($short) {
+        left: 13px;
+      }
+      transition-duration: 0.22s;
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      &::after,
+      &::before {
+        display: block;
+        content: "";
+      }
+      &::before {
+        top: -6px;
+        @include breakpoint($short) {
+          top: -9px;
+        }
+        transition: top 0.1s 0.25s ease-in,
+        opacity 0.1s ease-in;
+      }
+      &::after {
+        bottom: -7px;
+        @include breakpoint($short) {
+          bottom: -10px;
+        }
+        transition: bottom 0.1s 0.25s ease-in,
+        transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+    }
+  }
+  .topnav-toggle:checked ~ .hamburger {
+    background: #fff;
+    & span {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      &::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.1s ease-out,
+        opacity 0.1s 0.12s ease-out;
+      }
+      &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out,
+        transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
   }
 
   #topnav {
@@ -184,24 +184,24 @@ body > .site__title {
     white-space: nowrap;
     line-height: 40px;
     box-shadow: 2px 3px 6px hsla(0, 0, 0%, 0.3);
-  }
 
-  #topnav section {
-    margin-top: 1rem;
-    & > a {
-      font-weight: bold;
+    & section {
+      margin-top: 1rem;
+      & > a {
+        font-weight: bold;
+      }
+      & div {
+        margin-left: 1rem;
+        display: flex;
+        flex-flow: column;
+      }
     }
-  }
-  #topnav section div {
-    margin-left: 1rem;
-    display: flex;
-    flex-flow: column;
-  }
 
-  #topnav a {
-    color: $font-color;
-    opacity: 0;
-    transition: opacity 75ms ease-in-out;
+    & a {
+      color: $font-color;
+      opacity: 0;
+      transition: opacity 75ms ease-in-out;
+    }
   }
   .topnav-toggle:checked ~ #topnav {
     transform: scale(1, 1);
@@ -210,11 +210,22 @@ body > .site__title {
     opacity: 1;
     transition: opacity 125ms ease-in-out 125ms;
   }
+
+  .topnav-toggle:checked ~ .topnav-mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: hsla(0, 0, 0%, 0.4);
+  }
 }
 
 @include breakpoint($nav-bar-visible) {
 
-  .hamburger {
+  .hamburger,
+  .topnav-mask {
     display: none;
   }
 
