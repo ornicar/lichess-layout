@@ -922,6 +922,13 @@ body > .site__title {
   height: 300px;
 }
 
+#zoom-input {
+  position: fixed;
+  bottom: 3px;
+  right: 3px;
+  width: 10vw;
+}
+
 .site__chess {
   --header-size: 40px;
   display: grid;
