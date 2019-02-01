@@ -23,7 +23,7 @@ $clock-height: 60px;
   @include breakpoint($col-2) {
     grid-template-columns:
     minmax(200px, calc(100vh - var(--header-size)))
-    minmax(120px, 300px);
+    minmax(min-content, 1fr);
     grid-template-rows: auto 60px 40px auto 40px 40px 60px auto;
     grid-column-gap: $block-gap;
   }
@@ -47,6 +47,12 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   height: 0;
   padding-bottom: 100%;
   width: 100%;
+}
+
+.chess__play {
+  @include breakpoint($col-2) {
+    max-width: 33vw;
+  }
 }
 
 .chess__clock-op {
