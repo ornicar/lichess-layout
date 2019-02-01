@@ -1,0 +1,6 @@
+@function dimmer($color, $weight: 15%) {
+  @return mix(hsl(0, 0, 255), $color, $weight);
+}
+@function clearer($color, $weight: 15%) {
+  @return mix(hsl(0, 0, 0), $color, $weight);
+}

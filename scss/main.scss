@@ -5,10 +5,12 @@
 @import "base/reset";
 @import "base/fonts";
 @import "base/data-icon";
+@import "base/theme-light";
 
 // Components
 @import "components/scaffolding";
 @import "components/layout";
+@import "components/site-title";
 @import "components/top";
 @import "components/placeholder";
 @import "components/chess";

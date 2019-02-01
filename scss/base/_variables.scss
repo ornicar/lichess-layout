@@ -5,6 +5,8 @@ $small: (min-width 800px);
 $medium: (min-width 1000px);
 $large: (min-width 1200px);
 
+$not-small: (max-width 799px);
+
 /* Heights */
 $short: (min-height 500px);
 $tall: (min-height 600px);
@@ -16,9 +18,13 @@ $landscape: (orientation landscape);
 
 $block-gap: 2.5vmin;
 
+$header-big: 60px;
+$header-tiny: 40px;
 
 /* Colors */
 $background: #eeeeee;
+$background2: #ffffff;
+$background-dark: hsl(220, 7%, 16%);
 $primary-color: #3893E8;
 $secondary-color: #29de7d;
 $accent-color: #cdcdcd;

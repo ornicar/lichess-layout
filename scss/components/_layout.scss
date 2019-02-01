@@ -3,19 +3,23 @@
 
 $col-2: $x-small;
 $col-3: $large;
-$grid-header: 60px;
 
 body {
   display: grid;
   margin: 0;
 
+  --header-size: #{$header-tiny};
+  @include breakpoint($short) {
+    --header-size: #{$header-big};
+  }
+
   --zoom: 75;
   --scale: calc((var(--zoom) / 100) * 0.6 + 0.4);
-  --board-size: calc(100vh - #{$grid-header});
+  --board-size: calc(100vh - var(--header-size));
 
   grid-template-columns: 1fr;
 
-  grid-template-rows: $grid-header auto;
+  grid-template-rows: var(--header-size) auto;
 
   grid-column-gap: 0;
   grid-row-gap: 0;
@@ -35,26 +39,6 @@ body {
     minmax(240px, 300px)
     minmax(0, 1fr);
   }
-}
-
-.site__title {
-  grid-row: 1;
-  display: none;
-  margin: 0;
-  font-size: 33px;
-  font-weight: normal;
-  @include breakpoint($col-3) {
-    display: block;
-    grid-column: 2;
-  }
-  text-align: end;
-}
-.site__title a {
-  color: $font-color;
-  text-decoration: none;
-}
-.site__title__ext {
-  opacity: 0.7;
 }
 
 .site__top {
