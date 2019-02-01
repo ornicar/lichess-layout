@@ -22,7 +22,7 @@ $clock-height: 60px;
 
   @include breakpoint($col-2) {
     grid-template-columns:
-    minmax(200px, calc(100vh - var(--header-size) - #{$block-gap}))
+    minmax(200px, calc(100vh - var(--header-size)))
     minmax(120px, 300px);
     grid-template-rows: auto 60px 40px auto 40px 40px 60px auto;
     grid-column-gap: $block-gap;
