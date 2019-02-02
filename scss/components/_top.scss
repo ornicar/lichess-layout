@@ -1,4 +1,5 @@
 $nav-bar-visible: $small;
+$nav-bar-hidden: $not-small;
 $title-visible: $xx-small;
 
 .site__top {
@@ -25,7 +26,7 @@ $title-visible: $xx-small;
   @include breakpoint($col-3) {
     display: none;
   }
-  line-height: $header-tiny;
+  line-height: calc(#{$header-tiny} - 3px);
   font-size: 1.5rem;
   @include breakpoint($short) {
     line-height: $header-big;
@@ -78,7 +79,7 @@ body > .site__title {
   display: none;
 }
 
-@include breakpoint($not-small) {
+@include breakpoint($nav-bar-hidden) {
 
   .topnav-toggle {
     display: block;
