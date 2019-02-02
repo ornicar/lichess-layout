@@ -27,8 +27,12 @@
 }
 
 #zoom-input {
-  position: fixed;
-  bottom: 3px;
-  right: 3px;
-  width: 10vw;
+  display: none;
+  @include breakpoint($zoom-enabled) {
+    display: block;
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    width: 10vw;
+  }
 }

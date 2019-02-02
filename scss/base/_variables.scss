@@ -12,6 +12,7 @@ $short: (min-height 500px);
 $tall: (min-height 600px);
 
 $room-for-moves: (min-width 680px) (min-height 480px);
+$zoom-enabled: $small $short;
 
 $portrait: (orientation portrait);
 $landscape: (orientation landscape);

@@ -4,9 +4,16 @@ $clock-height: 60px;
 @mixin grid-columns-with-borders($borders) {
   grid-template-columns:
   $borders
-  minmax(200px, calc((100vh * var(--scale) - var(--header-size))))
+  minmax(200px, calc((100vh - var(--header-size))))
   minmax(min-content, auto)
   $borders;
+  @include breakpoint($zoom-enabled) {
+    grid-template-columns:
+    $borders
+    minmax(200px, calc((100vh * var(--scale) - var(--header-size))))
+    minmax(min-content, auto)
+    $borders;
+  }
 }
 
 .site__chess {
