@@ -49,9 +49,12 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   width: 100%;
 }
 
-.chess__play {
-  @include breakpoint($col-2) {
+@include breakpoint($col-2) {
+  .chess__play {
     max-width: 33vw;
+  }
+  .chess__clock {
+    max-width: 25vw;
   }
 }
 
