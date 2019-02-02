@@ -1,5 +1,10 @@
 playground for new lichess layout
 
+## Online demo
+
+- https://ornicar.github.io/lichess-layout/play.html
+- https://ornicar.github.io/lichess-layout/home.html
+
 ## Install
 
     yarn install
