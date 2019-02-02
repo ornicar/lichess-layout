@@ -22,17 +22,18 @@ $clock-height: 60px;
 
   @include breakpoint($col-2) {
     grid-template-columns:
-    minmax(200px, calc(100vh - var(--header-size)))
-    minmax(min-content, 1fr);
+    auto
+    minmax(200px, calc((100vh * var(--scale) - var(--header-size))))
+    minmax(min-content, auto)
+    auto;
     grid-template-rows: auto 60px 40px auto 40px 40px 60px auto;
-    grid-column-gap: $block-gap;
   }
 
   .chess__board {
     grid-column: 1 / 3;
     grid-row: 2;
     @include breakpoint($col-2) {
-      grid-column: 1;
+      grid-column: 2;
       grid-row: 1 / 9;
     }
     @include breakpoint($portrait) {
@@ -49,20 +50,10 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   width: 100%;
 }
 
-@include breakpoint($col-2) {
-  .chess__play {
-    max-width: 33vw;
-  }
-  .chess__clock {
-    max-width: 25vw;
-  }
-}
-
 .chess__clock-op {
   grid-column: 2;
   grid-row: 1;
   @include breakpoint($col-2) {
-    grid-column: 2;
     grid-row: 2;
   }
 }
@@ -70,7 +61,6 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   grid-column: 1;
   grid-row: 1;
   @include breakpoint($col-2) {
-    grid-column: 2;
     grid-row: 3;
   }
 }
@@ -79,7 +69,6 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   grid-column: 2;
   grid-row: 3;
   @include breakpoint($col-2) {
-    grid-column: 2;
     grid-row: 7;
   }
 }
@@ -87,7 +76,6 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   grid-column: 1;
   grid-row: 3;
   @include breakpoint($col-2) {
-    grid-column: 2;
     grid-row: 6;
   }
 }
@@ -96,7 +84,6 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   grid-column: 1 / 3;
   grid-row: 5;
   @include breakpoint($col-2) {
-    grid-column: 2;
     grid-row: 4;
   }
 }
@@ -104,8 +91,18 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   grid-column: 1 / 3;
   grid-row: 4;
   @include breakpoint($col-2) {
-    grid-column: 2;
     grid-row: 5;
+  }
+}
+
+@include breakpoint($col-2) {
+  .chess__play {
+    grid-column: 3;
+    margin-left: $block-gap;
+    max-width: 33vw;
+  }
+  .chess__clock {
+    max-width: 25vw;
   }
 }
 
