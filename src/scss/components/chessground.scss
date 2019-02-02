@@ -5,6 +5,16 @@
  * board and pieces displayed!
  */
 
+$piece-image-path: "../../assets/img/chessground/piece";
+$board-image-path: "../../assets/img/chessground/board";
+
+@mixin piece-img($name) {
+  background-image: url("#{$piece-image-path}/#{$name}");
+}
+@mixin board-img($name) {
+  background-image: url("#{$board-image-path}/#{$name}");
+}
+
 .cg-board-wrap {
   width: 100%;
   height: 100%;
@@ -147,44 +157,44 @@
  * Board
  */
 .blue .cg-board-wrap {
-  background-image: url(../img/chessground/board/blue.svg);
+  @include board-img("blue.svg");
 }
 
 .cburnett .cg-board-wrap piece.pawn.white {
-  background-image: url('../img/chessground/pieces/cburnett/wP.svg');
+  @include piece-img("cburnett/wP.svg");
 }
 .cburnett .cg-board-wrap piece.bishop.white {
-  background-image: url('../img/chessground/pieces/cburnett/wB.svg');
+  @include piece-img("cburnett/wB.svg");
 }
 .cburnett .cg-board-wrap piece.knight.white {
-  background-image: url('../img/chessground/pieces/cburnett/wN.svg');
+  @include piece-img("cburnett/wN.svg");
 }
 .cburnett .cg-board-wrap piece.rook.white {
-  background-image: url('../img/chessground/pieces/cburnett/wR.svg');
+  @include piece-img("cburnett/wR.svg");
 }
 .cburnett .cg-board-wrap piece.queen.white {
-  background-image: url('../img/chessground/pieces/cburnett/wQ.svg');
+  @include piece-img("cburnett/wQ.svg");
 }
 .cburnett .cg-board-wrap piece.king.white {
-  background-image: url('../img/chessground/pieces/cburnett/wK.svg');
+  @include piece-img("cburnett/wK.svg");
 }
 .cburnett .cg-board-wrap piece.pawn.black {
-  background-image: url('../img/chessground/pieces/cburnett/bP.svg');
+  @include piece-img("cburnett/bP.svg");
 }
 .cburnett .cg-board-wrap piece.bishop.black {
-  background-image: url('../img/chessground/pieces/cburnett/bB.svg');
+  @include piece-img("cburnett/bB.svg");
 }
 .cburnett .cg-board-wrap piece.knight.black {
-  background-image: url('../img/chessground/pieces/cburnett/bN.svg');
+  @include piece-img("cburnett/bN.svg");
 }
 .cburnett .cg-board-wrap piece.rook.black {
-  background-image: url('../img/chessground/pieces/cburnett/bR.svg');
+  @include piece-img("cburnett/bR.svg");
 }
 .cburnett .cg-board-wrap piece.queen.black {
-  background-image: url('../img/chessground/pieces/cburnett/bQ.svg');
+  @include piece-img("cburnett/bQ.svg");
 }
 .cburnett .cg-board-wrap piece.king.black {
-  background-image: url('../img/chessground/pieces/cburnett/bK.svg');
+  @include piece-img("cburnett/bK.svg");
 }
 
 /* inner coords */
