@@ -178,7 +178,7 @@ body > .site__title {
     transform: scale(0, 1);
     transform-origin: left;
     transition: transform 200ms ease-in-out;
-    padding: 0 1.2rem 1.2rem 1.2rem;
+    padding: 0 0 1.2rem 1.2rem;
     overflow-y: auto;
     white-space: nowrap;
     line-height: 40px;
@@ -191,14 +191,21 @@ body > .site__title {
         font-weight: bold;
       }
       & div {
-        margin-left: 1rem;
         display: flex;
         flex-flow: column;
+        & a {
+          padding: 0 1.2rem;
+          &:hover {
+            background: $primary-color;
+            color: #fff;
+          }
+        }
       }
     }
 
     & a {
       color: $font-color;
+      text-decoration: none;
       opacity: 0;
       transition: opacity 75ms ease-in-out;
     }
@@ -270,14 +277,14 @@ body > .site__title {
       background: #fff;
       width: 10rem;
       box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.3);
-    }
-    & div a {
-      display: block;
-      padding: 6px 10px;
-    }
-    & div a:hover {
-      background: $primary-color;
-      color: #fff;
+      & a {
+        display: block;
+        padding: 6px 12px;
+        &:hover {
+          background: $primary-color;
+          color: #fff;
+        }
+      }
     }
   }
   #topnav.blind div {
