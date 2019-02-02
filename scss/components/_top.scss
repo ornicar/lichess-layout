@@ -178,8 +178,6 @@ body > .site__title {
     transform: scale(0, 1);
     transform-origin: left;
     transition: transform 200ms ease-in-out;
-    display: flex;
-    flex-flow: column;
     padding: 0 1.2rem 1.2rem 1.2rem;
     overflow-y: auto;
     white-space: nowrap;

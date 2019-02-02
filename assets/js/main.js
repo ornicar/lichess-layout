@@ -1,6 +1,4 @@
-const board = document.getElementById('board');
-
-Chessground(board);
+Chessground(document.getElementById('main-board'));
 
 function resizeBoard() {
   const ev = document.createEvent('Event');
