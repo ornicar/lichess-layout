@@ -1,6 +1,14 @@
 $col-2: ($x-small, $landscape);
 $clock-height: 60px;
 
+@mixin grid-columns-with-borders($borders) {
+  grid-template-columns:
+  $borders
+  minmax(200px, calc((100vh * var(--scale) - var(--header-size))))
+  minmax(min-content, auto)
+  $borders;
+}
+
 .site__chess {
 
   --header-size: #{$header-tiny};
@@ -21,12 +29,12 @@ $clock-height: 60px;
   60px;
 
   @include breakpoint($col-2) {
-    grid-template-columns:
-    auto
-    minmax(200px, calc((100vh * var(--scale) - var(--header-size))))
-    minmax(min-content, auto)
-    auto;
+    @include grid-columns-with-borders(auto);
     grid-template-rows: auto 60px 40px auto 40px 40px 60px auto;
+  }
+
+  @include breakpoint($col-3) {
+    @include grid-columns-with-borders(0);
   }
 
   .chess__board {
