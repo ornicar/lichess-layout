@@ -1,7 +1,17 @@
 $col-2: ($x-small, $landscape);
-$clock-height: 60px;
 
-@mixin grid-columns-with-borders($borders) {
+$col-1-player-clock-height: 60px;
+$col-1-clock-height: 60px;
+$col-1-actions-height: 60px;
+$col-1-moves-height: 9rem;
+
+$col-2-material-height: 30px;
+$col-2-clock-height: 60px;
+$col-2-player-height: 40px;
+$col-2-moves-height: auto;
+$col-2-actions-height: 60px;
+
+@mixin col-2-grid-columns-with-borders($borders) {
   grid-template-columns:
   $borders
   minmax(200px, calc((100vh - var(--header-size))))
@@ -16,32 +26,42 @@ $clock-height: 60px;
   }
 }
 
+@mixin col-2-grid-rows-with-moves($moves) {
+  grid-template-rows:
+  auto
+  $col-2-material-height
+  $col-2-clock-height
+  $col-2-player-height
+  $moves
+  $col-2-actions-height
+  $col-2-player-height
+  $col-2-clock-height
+  $col-2-material-height
+  auto;
+}
+
 .site__chess {
 
-  --header-size: #{$header-tiny};
-  @include breakpoint($short) {
-    --header-size: #{$header-big};
-  }
-
   display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 0;
 
   grid-template-columns: 3fr 1fr;
   grid-template-rows:
-  $clock-height
+  $col-1-player-clock-height
   auto
-  $clock-height
-  40px
-  60px;
+  $col-1-player-clock-height
+  $col-1-actions-height
+  $col-1-moves-height;
 
   @include breakpoint($col-2) {
-    @include grid-columns-with-borders(auto);
-    grid-template-rows: auto 60px 40px auto 40px 40px 60px auto;
+    @include col-2-grid-columns-with-borders(auto);
+    @include col-2-grid-rows-with-moves(0);
+    @include breakpoint($room-for-moves) {
+      @include col-2-grid-rows-with-moves($col-2-moves-height);
+    }
   }
 
   @include breakpoint($col-3) {
-    @include grid-columns-with-borders(0);
+    @include col-2-grid-columns-with-borders(0);
   }
 
   .chess__board {
@@ -49,15 +69,14 @@ $clock-height: 60px;
     grid-row: 2;
     @include breakpoint($col-2) {
       grid-column: 2;
-      grid-row: 1 / 9;
+      grid-row: 1 / 11;
     }
     @include breakpoint($portrait) {
       /* In portrait single column, make sure both clocks and the board fit in the viewport.
        * If they don't, limit the board width */
-max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} * 2));
-// justify-self: center;
+max-width: calc(100vh - var(--header-size) - (#{$col-1-clock-height} * 2));
+    }
   }
-}
 }
 .chess__board .square {
   height: 0;
@@ -65,48 +84,67 @@ max-width: calc(100vh - var(--header-size) - #{$block-gap} - (#{$clock-height} *
   width: 100%;
 }
 
-.chess__clock-op {
-  grid-column: 2;
-  grid-row: 1;
-  @include breakpoint($col-2) {
-    grid-row: 2;
-  }
-}
 .chess__user-op {
   grid-column: 1;
+  grid-row: 1;
+  @include breakpoint($col-2) {
+    grid-row: 4;
+  }
+}
+.chess__clock-op {
+  grid-column: 2;
   grid-row: 1;
   @include breakpoint($col-2) {
     grid-row: 3;
   }
 }
 
-.chess__clock-pl {
-  grid-column: 2;
+.chess__user-pl {
+  grid-column: 1;
   grid-row: 3;
   @include breakpoint($col-2) {
     grid-row: 7;
   }
 }
-.chess__user-pl {
-  grid-column: 1;
+.chess__clock-pl {
+  grid-column: 2;
   grid-row: 3;
   @include breakpoint($col-2) {
-    grid-row: 6;
+    grid-row: 8;
   }
 }
 
-.chess__moves {
-  grid-column: 1 / 3;
-  grid-row: 5;
-  @include breakpoint($col-2) {
-    grid-row: 4;
-  }
-}
 .chess__actions {
   grid-column: 1 / 3;
   grid-row: 4;
   @include breakpoint($col-2) {
-    grid-row: 5;
+    grid-row: 6;
+  }
+}
+.chess__moves {
+  grid-column: 1 / 3;
+  grid-row: 5;
+  @include breakpoint($col-2) {
+    display: none;
+    @include breakpoint($room-for-moves) {
+      grid-row: 5;
+      height: 15vh;
+      display: flex;
+    }
+  }
+}
+
+.chess__material {
+  display: none;
+  @include breakpoint($col-2) {
+    display: block;
+    grid-column: 2;
+    &-op {
+      grid-row: 2;
+    }
+    &-pl {
+      grid-row: 9;
+    }
   }
 }
 

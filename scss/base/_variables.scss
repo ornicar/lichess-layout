@@ -1,6 +1,6 @@
 /* Widths */
 $xx-small: (min-width 500px);
-$x-small: (min-width 600px);
+$x-small: (min-width 650px);
 $small: (min-width 800px);
 $medium: (min-width 1000px);
 $large: (min-width 1200px);
@@ -11,7 +11,7 @@ $not-small: (max-width 799px);
 $short: (min-height 500px);
 $tall: (min-height 600px);
 
-$room-for-moves: (min-width 680px) (min-height 480px);
+$room-for-moves: $x-small $short;
 $zoom-enabled: $small $short;
 
 $portrait: (orientation portrait);
