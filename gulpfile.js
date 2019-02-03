@@ -21,7 +21,7 @@ const autoprefixerOptions = {
 
 const htmlBuild = shell.task('eleventy');
 
-gulp.task('generate', htmlBuild);
+gulp.task('html', htmlBuild);
 
 function sassBuild() {
   return gulp
@@ -48,9 +48,7 @@ function serve() {
   gulp.watch("*.html").on('change', browserSync.reload);
 }
 
-gulp.task('serve', gulp.series([sassBuild, serve]));
-
-gulp.task('default', serve);
+gulp.task('default', gulp.series([htmlBuild, sassBuild, serve]));
 
 // function watch() {
 //   return gulp
