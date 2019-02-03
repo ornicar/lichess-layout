@@ -7,7 +7,7 @@ $title-visible: $xx-small;
   justify-content: space-between;
   align-content: flex-end;
   position: relative;
-  z-index: 5;
+  z-index: z('site__top');
 }
 
 .site__top .site__title-nav {
