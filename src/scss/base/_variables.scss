@@ -5,7 +5,7 @@ $xx-small: (min-width 500px);
 $x-small: (min-width 650px);
 $small: (min-width 800px);
 $medium: (min-width 1000px);
-$large: (min-width 1200px);
+$large: (min-width 1120px);
 
 $not-small: (max-width 799px);
 
@@ -19,7 +19,7 @@ $zoom-enabled: $small $short;
 $portrait: (orientation portrait);
 $landscape: (orientation landscape);
 
-$block-gap: 2.5vmin;
+$block-gap: 2.3vmin;
 
 $header-big: 60px;
 $header-tiny: 40px;
