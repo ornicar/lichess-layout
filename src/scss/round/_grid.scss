@@ -11,7 +11,7 @@ body {
   grid-template-rows: var(--site-header-size) auto;
 
   grid-column-gap: 0;
-  grid-row-gap: 0;
+  grid-row-gap: $block-gap;
 
   /* 2 columns */
   @include breakpoint($col-2) {
@@ -24,7 +24,7 @@ body {
     grid-template-columns:
     minmax(0, 1fr)
     minmax(200px, 300px)
-    minmax(600px, calc(100vh * var(--scale) - var(--site-header-size)))
+    minmax(600px, calc(100vh * var(--scale) - var(--site-header-size) - #{$block-gap}))
     minmax(200px, 300px)
     minmax(0, 1fr);
   }
@@ -79,7 +79,6 @@ body > .site-title {
   grid-row: 4;
 
   @include breakpoint($col-2) {
-    margin-top: $block-gap;
     grid-column: 1;
     grid-row: 3;
   }
@@ -95,7 +94,6 @@ body > .site-title {
   grid-row: 5;
 
   @include breakpoint($col-2) {
-    margin-top: $block-gap;
     grid-column: 2;
     grid-row: 3;
   }
