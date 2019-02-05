@@ -72,6 +72,10 @@ $col-2-actions-height: 60px;
     @include breakpoint($col-2) {
       grid-column: 2;
       grid-row: 1 / 11;
+      /* Align vertically when zoomed out */
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
     }
     @include breakpoint($portrait) {
       /* In portrait single column, make sure both clocks and the board fit in the viewport.

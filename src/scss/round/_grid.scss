@@ -3,8 +3,8 @@ $col-3: $large;
 
 .site-content {
 
-  --zoom: 75;
-  --scale: calc((var(--zoom) / 100) * 0.7 + 0.3);
+  // --zoom: 85; defined in the HTML, loaded from server saved config
+  --scale: calc((var(--zoom) / 100) * 0.5 + 0.5);
 
   /* 2 columns */
   @include breakpoint($col-2) {
