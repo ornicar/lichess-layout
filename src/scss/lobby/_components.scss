@@ -1,8 +1,20 @@
+@include breakpoint($col-3) {
+  .lobby__play-counters {
+    position: relative;
+  }
+  .lobby__counters {
+    position: absolute;
+    bottom: 0;
+  }
+  .lobby__play-buttons {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+}
 .lobby__play-buttons {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  .button {
+  & .button {
     width: 100%;
     margin: .2rem 0;
     padding: .5rem;
@@ -11,10 +23,6 @@
       padding: 1rem;
     }
   }
-}
-
-.lobby {
-  // @extend %box-shadow;
 }
 
 .lobby__counters {
@@ -26,6 +34,27 @@
     margin: 0;
   }
 }
+
+.lobby {
+  display: flex;
+  flex-flow: column;
+}
+.lobby__tabs {
+  display: flex;
+  flex-flow: row wrap;
+}
+.lobby__tabs a {
+  color: $c-font;
+  background: $c-background2;
+  padding: 0 $block-gap;
+  margin-right: $block-gap;
+  // overflow: hidden;
+}
+.lobby__container {
+  @extend %placeholder;
+  flex: 1 1 100%;
+}
+
 .lobby__timeline {
   height: 10rem;
 }

@@ -1,5 +1,5 @@
-$nav-bar-visible: $small;
-$nav-bar-hidden: $not-small;
+$nav-bar-visible: $medium;
+$nav-bar-hidden: $not-medium;
 $title-visible: $xx-small;
 
 body {
@@ -15,6 +15,7 @@ body {
   align-content: flex-end;
   position: relative;
   z-index: z('site-header');
+  // background: hsl(0, 0%, 84%);
 }
 
 .site-header .site-title-nav {
@@ -36,7 +37,7 @@ body {
     line-height: $header-big;
     font-size: 1.8rem;
   }
-  @include breakpoint($short $small) {
+  @include breakpoint($short $medium) {
     line-height: 54px;
     margin: 0 1rem;
   }
@@ -53,9 +54,6 @@ body {
       }
     }
   }
-}
-body > .site-title {
-  margin: 0;
 }
 
 .site-buttons {

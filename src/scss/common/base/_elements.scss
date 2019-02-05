@@ -7,10 +7,17 @@ html {
 }
 
 body {
-  display: grid;
   background: $c-background linear-gradient(to bottom, $c-body-gradient, $c-background 116px) no-repeat;
   color: $c-font;
   font-size: 1rem;
+}
+
+content {
+  display: grid;
+  margin: auto;
+  grid-column-gap: $block-gap;
+  grid-row-gap: $block-gap;
+  // overflow-x: hidden;
 }
 
 a {
