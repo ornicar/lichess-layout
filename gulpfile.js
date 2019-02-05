@@ -11,6 +11,7 @@ const commonSassInput = 'src/scss/common/**/*.scss';
 const sassOutput = 'assets/css';
 
 const htmlInput = 'src/html/**/*.html';
+const htmlOutput = 'site/**/*.html';
 
 const sassOptions = {
   errLogToConsole: true,
@@ -54,7 +55,7 @@ function serve() {
   gulp.watch(homeSassInput, homeSass);
   gulp.watch(commonSassInput, gulp.series(allSass));
   gulp.watch(htmlInput, htmlBuild);
-  gulp.watch("*.html").on('change', browserSync.reload);
+  gulp.watch(htmlOutput).on('change', browserSync.reload);
 }
 
 gulp.task('default', gulp.series([

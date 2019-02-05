@@ -7,18 +7,17 @@ html {
 }
 
 body {
-  color: $font-color;
-  background: $background;
-  font-size: $body-font-size;
+  background: $c-background;
+  color: $c-font;
+  font-size: 1rem;
 }
 
 a {
-  color: $link-color;
+  color: $c-link;
   text-decoration: none;
   &:hover,
   &:active,
   &:focus {
-    color: $link-hover-color;
-    text-decoration: underline;
+    color: $c-link-hover;
   }
 }

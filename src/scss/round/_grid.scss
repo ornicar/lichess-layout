@@ -52,12 +52,12 @@ body {
   }
 }
 
-.site__top .site__title {
+.site__top .site-title {
   @include breakpoint($col-3) {
     display: none;
   }
 }
-body > .site__title {
+body > .site-title {
   display: none;
   @include breakpoint($col-3) {
     display: block;

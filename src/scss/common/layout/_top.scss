@@ -10,12 +10,12 @@ $title-visible: $xx-small;
   z-index: z('site__top');
 }
 
-.site__top .site__title-nav {
+.site__top .site-title-nav {
   display: flex;
   justify-content: flex-start;
 }
 
-.site__title {
+.site-title {
   font-size: 2rem;
   font-weight: normal;
   margin: 0 .5rem;
@@ -34,20 +34,20 @@ $title-visible: $xx-small;
     margin: 0 1rem;
   }
   & a {
-    color: $font-color;
+    color: $c-font;
     text-decoration: none;
     & span {
-      color: dimmer($font-color, 30);
+      color: $c-font-dim;
     }
     &:hover {
-      color: $primary-color;
+      color: $c-primary;
       & span {
-        color: dimmer($primary-color, 30);
+        color: $c-primary-dim;
       }
     }
   }
 }
-body > .site__title {
+body > .site-title {
   margin: 0;
 }
 
@@ -60,7 +60,7 @@ body > .site__title {
   align-items: center;
 }
 .site__buttons .link {
-  color: $font-color;
+  color: $c-font;
   text-decoration: none;
   padding: 0 0.5rem;
 }
@@ -98,7 +98,7 @@ body > .site__title {
       transition-duration: .15s;
       transition-property: transform;
       border-radius: 3px;
-      background-color: dimmer($font-color);
+      background-color: $c-font-dim;
       @include breakpoint($short) {
         width: 34px;
         height: 3px;
@@ -136,7 +136,7 @@ body > .site__title {
     }
   }
   .topnav-toggle:checked ~ .hamburger {
-    background: #fff;
+    background: $c-background2;
     & span {
       transform: rotate(225deg);
       transition-delay: 0.12s;
@@ -164,7 +164,7 @@ body > .site__title {
     }
     bottom: 0;
     left: 0;
-    background: $background2;
+    background: $c-background2;
     transform: scale(0, 1);
     transform-origin: left;
     transition: transform 200ms ease-in-out;
@@ -186,7 +186,7 @@ body > .site__title {
         & a {
           padding: 0 1.2rem;
           &:hover {
-            background: $primary-color;
+            background: $c-primary;
             color: #fff;
           }
         }
@@ -194,7 +194,7 @@ body > .site__title {
     }
 
     & a {
-      color: $font-color;
+      color: $c-font;
       text-decoration: none;
       opacity: 0;
       transition: opacity 75ms ease-in-out;
@@ -215,7 +215,7 @@ body > .site__title {
     left: 0;
     bottom: 0;
     right: 0;
-    background: hsla(0, 0, 0%, 0.5);
+    background: $c-page-mask;
   }
 }
 
@@ -235,14 +235,12 @@ body > .site__title {
     }
     display: flex;
     & a {
-      text-decoration: none;
-      color: $font-color;
+      color: $c-font;
     }
     & section {
       position: relative;
       height: var(--nav-section);
       & > a {
-        color: clearer($font-color);
         display: block;
         height: var(--nav-section);
         line-height: $header-tiny;
@@ -254,7 +252,8 @@ body > .site__title {
       }
       &:hover > a {
         height: var(--nav-section-hover);
-        background: #fff;
+        background: $c-background2;
+        color: $c-font-clear;
       }
       &:hover div {
         display: block;
@@ -264,15 +263,16 @@ body > .site__title {
       display: none;
       position: absolute;
       left: 0;
-      background: #fff;
+      background: $c-background2;
       width: 10rem;
       box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.3);
       & a {
         display: block;
         padding: 6px 12px;
+        color: $c-font-clear;
         &:hover {
-          background: $primary-color;
-          color: #fff;
+          background: $c-primary;
+          color: $c-primary-over;
         }
       }
     }
