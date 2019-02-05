@@ -1,30 +1,3 @@
-@include breakpoint($col-3) {
-  .lobby__play-counters {
-    position: relative;
-  }
-  .lobby__counters {
-    position: absolute;
-    bottom: 0;
-  }
-  .lobby__play-buttons {
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-  }
-}
-.lobby__play-buttons {
-  & .button {
-    width: 100%;
-    margin: .2rem 0;
-    padding: .5rem;
-    @include breakpoint($col-3) {
-      margin: 1rem 0;
-      padding: 1rem;
-    }
-  }
-}
-
 .lobby__counters {
   display: flex;
   justify-content: space-between;
@@ -33,26 +6,6 @@
     display: block;
     margin: 0;
   }
-}
-
-.lobby {
-  display: flex;
-  flex-flow: column;
-}
-.lobby__tabs {
-  display: flex;
-  flex-flow: row wrap;
-}
-.lobby__tabs a {
-  color: $c-font;
-  background: $c-background2;
-  padding: 0 $block-gap;
-  margin-right: $block-gap;
-  // overflow: hidden;
-}
-.lobby__container {
-  @extend %placeholder;
-  flex: 1 1 100%;
 }
 
 .lobby__timeline {

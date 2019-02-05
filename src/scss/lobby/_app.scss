@@ -1,0 +1,19 @@
+.lobby__app {
+  display: flex;
+  flex-flow: column;
+  &__tabs {
+    display: flex;
+    flex-flow: row wrap;
+    & a {
+      color: $c-font;
+      background: $c-background2;
+      padding: 0 $block-gap;
+      margin-right: $block-gap;
+      // overflow: hidden;
+    }
+  }
+  &__container {
+    @extend %placeholder;
+    flex: 1 1 100%;
+  }
+}

@@ -29,7 +29,7 @@ gulp.task('html', htmlBuild);
 function sassBuilder(input) {
   return function() {
     return gulp
-      .src(input)
+      .src(input.replace(/\*\*\/\*\.scss/, 'build/*.scss'))
       .pipe(sourcemaps.init())
       .pipe(sass(sassOptions).on('error', sass.logError))
       .pipe(sourcemaps.write())
@@ -77,7 +77,7 @@ gulp.task('default', gulp.series([
 
 gulp.task('prod', function () {
   return gulp
-    .src(input)
+    .src('src/scss/*/build/*.scss')
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(gulp.dest(sassOutput));
