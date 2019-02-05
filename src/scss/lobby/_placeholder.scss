@@ -1,0 +1,30 @@
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: $c-background2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  outline: 1px solid $c-border;
+}
+
+.lobby .placeholder {
+}
+.lobby__counters {
+  margin-bottom: $block-gap;
+}
+.lobby__streams .placeholder {
+  height: 5rem;
+  margin-bottom: $block-gap;
+}
+.lobby__timeline .placeholder {
+  height: 100%;
+}
+.lobby__tournaments .placeholder,
+.lobby__simuls .placeholder,
+.lobby__forum .placeholder,
+.lobby__blog .placeholder,
+.lobby__patron .placeholder {
+  height: 15rem;
+}

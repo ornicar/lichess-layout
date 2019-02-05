@@ -7,7 +7,8 @@ html {
 }
 
 body {
-  background: $c-background;
+  display: grid;
+  background: $c-background linear-gradient(to bottom, $c-body-gradient, $c-background 116px) no-repeat;
   color: $c-font;
   font-size: 1rem;
 }

@@ -3,10 +3,10 @@
   <head>
     <title>Lichess layout</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-    <link href="../../assets/css/.css" rel="stylesheet" />
+    <link href="../../assets/css/lobby.light.css" rel="stylesheet" />
     <style>
       body { --zoom: 85; }
     </style>
@@ -17,7 +17,7 @@
         lichess<span class="site-title__ext">.org</span>
     </a></h1>
 
-    <header class="site__top">
+    <header class="site-header">
       <div class="site-title-nav">
         <input type="checkbox" id="topnav-toggle" class="topnav-toggle">
         <label for="topnav-toggle" class="topnav-mask"></label>
@@ -27,7 +27,7 @@
         </a></div>
         <nav id="topnav" class="hover"><section><a href="../play">Play</a><div role="group"><a href="/?any#hook">Create a game</a><a href="/tournament">Tournament</a><a href="/simul">Simultaneous exhibitions</a></div></section><section><a href="/training">Learn</a><div role="group"><a href="/learn">Chess basics</a><a href="/training">Puzzles</a><a href="/practice">Practice</a><a href="/training/coordinate">Coordinates</a><a href="/study">Study</a><a href="/coach">Coaches</a></div></section><section><a href="/tv">Watch</a><div role="group"><a href="/tv">Lichess TV</a><a href="/games">Current games</a><a href="/streamer">Streamers</a><a href="/broadcast">Broadcasts (beta)</a><a href="/video">Video library</a></div></section><section><a href="/player">Community</a><div role="group"><a href="/player">Players</a><a href="/team">Teams</a><a href="/forum">Forum</a><a href="/qa">Questions &amp; Answers</a></div></section><section><a href="/analysis">Tools</a><div role="group"><a href="/analysis">Analysis board</a><a href="/analysis#explorer">Opening explorer</a><a href="/editor">Board editor</a><a href="/paste">Import game</a><a href="/games/search">Advanced search</a></div></section></nav>
       </div>
-      <div class="site__buttons">
+      <div class="site-buttons">
         <!-- <a id="reconnecting" class="link text" data-icon="B">Reconnecting</a> -->
         <div id="clinput">
           <a class="link"><span data-icon="y"></span></a>
@@ -41,68 +41,82 @@
     </header>
 
     
-<div class="home__counters">
-  34,550 players<br>
-  12,781 games in play
+<div class="lobby__side">
+  <div class="lobby__counters">
+    34,550 players<br>
+    12,781 games in play
+  </div>
+  <div class="lobby__streams">
+    <div class="placeholder">streams</div>
+  </div>
+  <div class="lobby__timeline">
+    <div class="placeholder">timeline</div>
+  </div>
 </div>
 
-<div class="home__timeline">
-  <div class="placeholder">timeline</div>
-</div>
-
-<div class="home__lobby">
+<div class="lobby">
   <div class="placeholder">lobby</div>
 </div>
 
-<div class="home__play-buttons">
-  <button>Create a game</button>
-  <button>Play with a friend</button>
-  <button>Play with the machine</button>
+<div class="lobby__play-buttons">
+  <button class="button">Create a game</button>
+  <button class="button">Play with a friend</button>
+  <button class="button">Play with the machine</button>
 </div>
 
-<div class="home__tv">
-  <div class="placeholder">TV</div>
+<div class="lobby__tv">
+  <div class="square cg-board-wrap"></div>
+  <div class="placeholder">
+    playerA VS playerB<br>
+    clocks and stuff
+  </div>
 </div>
 
-<div class="home__puzzle">
-  <div class="placeholder">PotD</div>
+<div class="lobby__puzzle">
+  <div class="board">
+    <div class="square cg-board-wrap"></div>
+  </div>
+  <div class="placeholder">
+    PotD<br>
+    white to move
+  </div>
 </div>
 
-<div class="home__leaderboard">
+<div class="lobby__leaderboard">
   <div class="placeholder">Leaderboard</div>
 </div>
 
-<div class="home__winners">
-  <div class="placeholder">Tournament winners</div>
+<div class="lobby__winners">
+  <div class="placeholder">Winners</div>
 </div>
 
-<div class="home__tournaments">
+<div class="lobby__tournaments">
   <div class="placeholder">Open tournaments</div>
 </div>
 
-<div class="home__simuls">
+<div class="lobby__simuls">
   <div class="placeholder">Open simuls</div>
 </div>
 
-<div class="home__forum">
+<div class="lobby__forum">
   <div class="placeholder">Forum activity</div>
 </div>
 
-<div class="home__blog">
+<div class="lobby__blog">
   <div class="placeholder">Latest updates</div>
 </div>
 
-<div class="home__patron">
+<div class="lobby__patron">
   <div class="placeholder">Patron &amp; Swag store</div>
 </div>
 
-<div class="home__about">
+<div class="lobby__about">
   <div class="placeholder">About lichess.org</div>
 </div>
 
 
     <script src="../../assets/js/chessground.min.js"></script>
-    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/lobby.js"></script>
 
   </body>
 </html>

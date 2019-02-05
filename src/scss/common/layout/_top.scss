@@ -2,15 +2,22 @@ $nav-bar-visible: $small;
 $nav-bar-hidden: $not-small;
 $title-visible: $xx-small;
 
-.site__top {
+body {
+  --site-header-size: #{$header-tiny};
+  @include breakpoint($short) {
+    --site-header-size: #{$header-big};
+  }
+}
+
+.site-header {
   display: flex;
   justify-content: space-between;
   align-content: flex-end;
   position: relative;
-  z-index: z('site__top');
+  z-index: z('site-header');
 }
 
-.site__top .site-title-nav {
+.site-header .site-title-nav {
   display: flex;
   justify-content: flex-start;
 }
@@ -51,7 +58,7 @@ body > .site-title {
   margin: 0;
 }
 
-.site__buttons {
+.site-buttons {
   display: flex;
   height: $header-tiny;
   @include breakpoint($short) {
@@ -59,7 +66,7 @@ body > .site-title {
   }
   align-items: center;
 }
-.site__buttons .link {
+.site-buttons .link {
   color: $c-font;
   text-decoration: none;
   padding: 0 0.5rem;

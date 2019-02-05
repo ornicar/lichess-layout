@@ -1,24 +1,14 @@
-/* Layout
-=============== */
-
 $col-2: $x-small;
 $col-3: $large;
 
 body {
-  display: grid;
-  margin: 0;
-
-  --header-size: #{$header-tiny};
-  @include breakpoint($short) {
-    --header-size: #{$header-big};
-  }
 
   --zoom: 75;
   --scale: calc((var(--zoom) / 100) * 0.7 + 0.3);
 
   grid-template-columns: 1fr;
 
-  grid-template-rows: var(--header-size) auto;
+  grid-template-rows: var(--site-header-size) auto;
 
   grid-column-gap: 0;
   grid-row-gap: 0;
@@ -34,13 +24,13 @@ body {
     grid-template-columns:
     minmax(0, 1fr)
     minmax(200px, 300px)
-    minmax(600px, calc(100vh * var(--scale) - var(--header-size)))
+    minmax(600px, calc(100vh * var(--scale) - var(--site-header-size)))
     minmax(200px, 300px)
     minmax(0, 1fr);
   }
 }
 
-.site__top {
+.site-header {
   grid-column: 1 / 2;
   grid-row: 1;
   @include breakpoint($col-2) {
@@ -52,7 +42,7 @@ body {
   }
 }
 
-.site__top .site-title {
+.site-header .site-title {
   @include breakpoint($col-3) {
     display: none;
   }

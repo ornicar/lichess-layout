@@ -1,0 +1,14 @@
+.lobby__play-buttons {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  .button {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+}
+
+.cg-board-wrap {
+  @extend %square;
+}

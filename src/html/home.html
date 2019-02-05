@@ -1,62 +1,78 @@
 ---
 layout: layout.html
+css: lobby.light
+js: lobby
 ---
 
-<div class="home__counters">
-  34,550 players<br>
-  12,781 games in play
+<div class="lobby__side">
+  <div class="lobby__counters">
+    34,550 players<br>
+    12,781 games in play
+  </div>
+  <div class="lobby__streams">
+    <div class="placeholder">streams</div>
+  </div>
+  <div class="lobby__timeline">
+    <div class="placeholder">timeline</div>
+  </div>
 </div>
 
-<div class="home__timeline">
-  <div class="placeholder">timeline</div>
-</div>
-
-<div class="home__lobby">
+<div class="lobby">
   <div class="placeholder">lobby</div>
 </div>
 
-<div class="home__play-buttons">
-  <button>Create a game</button>
-  <button>Play with a friend</button>
-  <button>Play with the machine</button>
+<div class="lobby__play-buttons">
+  <button class="button">Create a game</button>
+  <button class="button">Play with a friend</button>
+  <button class="button">Play with the machine</button>
 </div>
 
-<div class="home__tv">
-  <div class="placeholder">TV</div>
+<div class="lobby__tv">
+  <div class="square cg-board-wrap"></div>
+  <div class="placeholder">
+    playerA VS playerB<br>
+    clocks and stuff
+  </div>
 </div>
 
-<div class="home__puzzle">
-  <div class="placeholder">PotD</div>
+<div class="lobby__puzzle">
+  <div class="board">
+    <div class="square cg-board-wrap"></div>
+  </div>
+  <div class="placeholder">
+    PotD<br>
+    white to move
+  </div>
 </div>
 
-<div class="home__leaderboard">
+<div class="lobby__leaderboard">
   <div class="placeholder">Leaderboard</div>
 </div>
 
-<div class="home__winners">
-  <div class="placeholder">Tournament winners</div>
+<div class="lobby__winners">
+  <div class="placeholder">Winners</div>
 </div>
 
-<div class="home__tournaments">
+<div class="lobby__tournaments">
   <div class="placeholder">Open tournaments</div>
 </div>
 
-<div class="home__simuls">
+<div class="lobby__simuls">
   <div class="placeholder">Open simuls</div>
 </div>
 
-<div class="home__forum">
+<div class="lobby__forum">
   <div class="placeholder">Forum activity</div>
 </div>
 
-<div class="home__blog">
+<div class="lobby__blog">
   <div class="placeholder">Latest updates</div>
 </div>
 
-<div class="home__patron">
+<div class="lobby__patron">
   <div class="placeholder">Patron &amp; Swag store</div>
 </div>
 
-<div class="home__about">
+<div class="lobby__about">
   <div class="placeholder">About lichess.org</div>
 </div>

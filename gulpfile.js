@@ -6,7 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
 const roundSassInput = 'src/scss/round/**/*.scss';
-const homeSassInput = 'src/scss/home/**/*.scss';
+const lobbySassInput = 'src/scss/lobby/**/*.scss';
 const commonSassInput = 'src/scss/common/**/*.scss';
 const sassOutput = 'assets/css';
 
@@ -39,8 +39,8 @@ function sassBuilder(input) {
   }
 }
 const roundSass = sassBuilder(roundSassInput);
-const homeSass = sassBuilder(roundSassInput);
-const allSass = [homeSass, roundSass];
+const lobbySass = sassBuilder(lobbySassInput);
+const allSass = [lobbySass, roundSass];
 
 gulp.task('sass', gulp.series(allSass));
 
@@ -52,7 +52,7 @@ function serve() {
   });
 
   gulp.watch(roundSassInput, roundSass);
-  gulp.watch(homeSassInput, homeSass);
+  gulp.watch(lobbySassInput, lobbySass);
   gulp.watch(commonSassInput, gulp.series(allSass));
   gulp.watch(htmlInput, htmlBuild);
   gulp.watch(htmlOutput).on('change', browserSync.reload);
