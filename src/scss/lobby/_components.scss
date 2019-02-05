@@ -4,9 +4,30 @@
   justify-content: center;
   .button {
     width: 100%;
-    margin: 1rem 0;
-    padding: 1rem;
+    margin: .2rem 0;
+    padding: .5rem;
+    @include breakpoint($col-3) {
+      margin: 1rem 0;
+      padding: 1rem;
+    }
   }
+}
+
+.lobby {
+  // @extend %box-shadow;
+}
+
+.lobby__counters {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 $block-gap;
+  @include breakpoint($col-2) {
+    display: block;
+    margin: 0;
+  }
+}
+.lobby__timeline {
+  height: 10rem;
 }
 
 .cg-board-wrap {
