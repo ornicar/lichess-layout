@@ -1,0 +1,11 @@
+$zoom-enabled: $small $short;
+#zoom-input {
+  display: none;
+  @include breakpoint($zoom-enabled) {
+    display: block;
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    width: 10vw;
+  }
+}

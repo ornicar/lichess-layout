@@ -1,5 +1,7 @@
 $col-2: ($x-small, $landscape);
 
+$room-for-moves: $x-small $short;
+
 $col-1-player-clock-height: 60px;
 $col-1-clock-height: 60px;
 $col-1-actions-height: 60px;
@@ -42,11 +44,12 @@ $col-2-actions-height: 60px;
   auto;
 }
 
-.site__chess {
+.round__chess {
 
   display: grid;
 
   grid-template-columns: 3fr 1fr;
+
   grid-template-rows:
   $col-1-player-clock-height
   auto
@@ -54,24 +57,61 @@ $col-2-actions-height: 60px;
   $col-1-actions-height
   $col-1-moves-height;
 
+  grid-template-areas:
+  "user-op clock-op"
+  "board   board"
+  "user-pl clock-pl"
+  "actions actions"
+  "moves   moves";
+
   @include breakpoint($col-2) {
     @include col-2-grid-columns-with-gaps(auto, minmax($block-gap, auto), auto);
     @include col-2-grid-rows-with-moves(0);
+    grid-template-areas:
+    ". board . ."
+    ". board . mat-op"
+    ". board . clock-op"
+    ". board . user-op"
+    ". board . ."
+    ". board . actions"
+    ". board . user-pl"
+    ". board . clock-pl"
+    ". board . mat-pl"
+    ". board . .";
     @include breakpoint($room-for-moves) {
       @include col-2-grid-rows-with-moves($col-2-moves-height);
+      grid-template-areas:
+      ". board . ."
+      ". board . mat-op"
+      ". board . clock-op"
+      ". board . user-op"
+      ". board . moves"
+      ". board . actions"
+      ". board . user-pl"
+      ". board . clock-pl"
+      ". board . mat-pl"
+      ". board . .";
     }
   }
 
   @include breakpoint($col-3) {
     @include col-2-grid-columns-with-gaps(0, $block-gap, 0);
+      grid-template-areas:
+      ". board . ."
+      ". board . mat-op"
+      ". board . clock-op"
+      ". board . user-op"
+      ". board . moves"
+      ". board . actions"
+      ". board . user-pl"
+      ". board . clock-pl"
+      ". board . mat-pl"
+      ". board . .";
   }
 
-  .chess__board {
-    grid-column: 1 / 3;
-    grid-row: 2;
+  &__board {
+    grid-area: board;
     @include breakpoint($col-2) {
-      grid-column: 2;
-      grid-row: 1 / 11;
       /* Align vertically when zoomed out */
       display: flex;
       flex-flow: column;
@@ -82,95 +122,72 @@ $col-2-actions-height: 60px;
        * If they don't, limit the board width */
 max-width: calc(100vh - var(--site-header-size) - (#{$col-1-clock-height} * 2));
     }
-  }
-}
-.chess__board .cg-board-wrap {
-  @extend %square;
-}
-
-.chess__user-op {
-  grid-column: 1;
-  grid-row: 1;
-  @include breakpoint($col-2) {
-    grid-row: 4;
-  }
-}
-.chess__clock-op {
-  grid-column: 2;
-  grid-row: 1;
-  @include breakpoint($col-2) {
-    grid-row: 3;
-  }
-}
-
-.chess__user-pl {
-  grid-column: 1;
-  grid-row: 3;
-  @include breakpoint($col-2) {
-    grid-row: 7;
-  }
-}
-.chess__clock-pl {
-  grid-column: 2;
-  grid-row: 3;
-  @include breakpoint($col-2) {
-    grid-row: 8;
-  }
-}
-
-.chess__actions {
-  grid-column: 1 / 3;
-  grid-row: 4;
-  @include breakpoint($col-2) {
-    grid-row: 6;
-  }
-}
-.chess__moves {
-  grid-column: 1 / 3;
-  grid-row: 5;
-  @include breakpoint($col-2) {
-    display: none;
-    @include breakpoint($room-for-moves) {
-      grid-row: 5;
-      height: 15vh;
-      display: flex;
+    & .cg-board-wrap {
+      @extend %square;
     }
   }
-}
-
-.chess__material {
-  display: none;
-  @include breakpoint($col-2) {
-    display: block;
-    grid-column: 2;
-    &-op {
-      grid-row: 2;
+  &__material-op {
+    @extend %round__chess__material;
+    grid-area: mat-op;
+  }
+  &__material-pl {
+    @extend %round__chess__material;
+    grid-area: mat-pl;
+  }
+  &__user-op {
+    @extend %round__chess__user;
+    grid-area: user-op;
+  }
+  &__user-pl {
+    @extend %round__chess__user;
+    grid-area: user-pl;
+  }
+  &__clock {
+    @include breakpoint($x-small) {
+      width: 70%;
     }
-    &-pl {
-      grid-row: 9;
+  }
+  &__clock-op { grid-area: clock-op; }
+  &__clock-pl { grid-area: clock-pl; }
+  &__moves {
+    grid-area: moves;
+    @include breakpoint($col-2) {
+      display: none;
+      @include breakpoint($room-for-moves) {
+        height: 15vh;
+        display: flex;
+      }
     }
   }
+  &__actions { grid-area: actions; }
 }
 
-@include breakpoint($col-2) {
-  .chess__play {
-    grid-column: 4;
-    max-width: 33vw;
-  }
-  .chess__clock {
-    max-width: 25vw;
-  }
-}
-
-.chess__user {
+%round__chess__user {
   white-space: nowrap;
   justify-content: left;
   padding: 0.5rem;
   text-transform: none;
 }
+%round__chess__material {
+  display: none;
+  @include breakpoint($col-2) {
+    display: block;
+  }
+}
 
-.chess__clock {
-  @include breakpoint($x-small) {
-    width: 70%;
+@include breakpoint($col-2) {
+  .round__chess__material-op,
+  .round__chess__clock-op,
+  .round__chess__user-op,
+  .round__chess__moves,
+  .round__chess__actions,
+  .round__chess__user-pl,
+  .round__chess__clock-pl,
+  .round__chess__material-pl {
+    max-width: 30vw;
+  }
+  .round__chess__clock-op,
+  .round__chess__clock-pl {
+    max-width: 20vw;
   }
 }

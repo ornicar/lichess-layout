@@ -12,7 +12,7 @@
   @extend %placeholder;
 }
 
-.game__info {
+.round__info {
   flex: 0 1 120px;
 }
 .chat__lines {
@@ -28,15 +28,4 @@
 .game__others {
   margin-top: $block-gap;
   height: 300px;
-}
-
-#zoom-input {
-  display: none;
-  @include breakpoint($zoom-enabled) {
-    display: block;
-    position: fixed;
-    bottom: 3px;
-    right: 3px;
-    width: 10vw;
-  }
 }

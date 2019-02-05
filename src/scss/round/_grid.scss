@@ -6,9 +6,17 @@ $col-3: $large;
   // --zoom: 85; defined in the HTML, loaded from server saved config
   --scale: calc((var(--zoom) / 100) * 0.5 + 0.5);
 
+  grid-template-areas:
+  "chess"
+  "info-chat"
+  "ct-boards";
+
   /* 2 columns */
   @include breakpoint($col-2) {
     grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+    "chess      chess"
+    "info-chat  ct-boards";
   }
 
   /* 3 columns */
@@ -19,65 +27,36 @@ $col-3: $large;
     minmax(600px, calc(100vh * var(--scale) - var(--site-header-size)))
     minmax(200px, 300px)
     minmax(0, 1fr);
+    grid-template-areas:
+    ". info-chat  chess     chess       ."
+    ". under-chat ct-boards under-table .";
   }
 }
 
-.site__chess {
+.round__chess { grid-area: chess; }
 
-  @include breakpoint($col-2) {
-    grid-column: 1 / 3;
-  }
-  @include breakpoint($col-3) {
-    grid-column: 3 / 5;
-  }
-}
+.round__info-chat {
+  grid-area: info-chat;
 
-.site__info-chat {
   display: flex;
   flex-flow: column nowrap;
-
-  grid-column: 1;
-  grid-row: 3;
-
-  @include breakpoint($col-2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  @include breakpoint($col-3) {
-    grid-column: 2;
-    grid-row: 1;
-  }
 }
 
-.site__ct-boards {
-  grid-column: 1;
-  grid-row: 4;
+.round__ct-boards { grid-area: ct-boards; }
 
-  @include breakpoint($col-2) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  @include breakpoint($col-3) {
-    grid-column: 3;
-    grid-row: 2;
-  }
-}
-
-.site__under-chat {
+.round__under-chat {
+  grid-area: under-chat;
   display: none;
-  height: 200px;
   @include breakpoint($col-3) {
+    height: 200px;
     display: flex;
-    grid-column: 2;
-    grid-row: 2;
   }
 }
-.site__under-table {
+.round__under-table {
+  grid-area: under-table;
   display: none;
-  height: 200px;
   @include breakpoint($col-3) {
+    height: 200px;
     display: flex;
-    grid-column: 4;
-    grid-row: 2;
   }
 }
