@@ -5,7 +5,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
-const sassInput = 'src/scss/**/*.scss';
+const roundSassInput = 'src/scss/round/**/*.scss';
+const homeSassInput = 'src/scss/home/**/*.scss';
+const commonSassInput = 'src/scss/common/**/*.scss';
 const sassOutput = 'assets/css';
 
 const htmlInput = 'src/html/**/*.html';
@@ -23,18 +25,23 @@ const htmlBuild = shell.task('eleventy');
 
 gulp.task('html', htmlBuild);
 
-function sassBuild() {
-  return gulp
-    .src(sassInput)
-    .pipe(sourcemaps.init())
-    .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest(sassOutput))
-    .pipe(browserSync.stream());
+function sassBuilder(input) {
+  return function() {
+    return gulp
+      .src(input)
+      .pipe(sourcemaps.init())
+      .pipe(sass(sassOptions).on('error', sass.logError))
+      .pipe(sourcemaps.write())
+      .pipe(autoprefixer(autoprefixerOptions))
+      .pipe(gulp.dest(sassOutput))
+      .pipe(browserSync.stream());
+  }
 }
+const roundSass = sassBuilder(roundSassInput);
+const homeSass = sassBuilder(roundSassInput);
+const allSass = [homeSass, roundSass];
 
-gulp.task('sass', sassBuild);
+gulp.task('sass', gulp.series(allSass));
 
 function serve() {
   browserSync.init({
@@ -43,12 +50,18 @@ function serve() {
     }
   });
 
-  gulp.watch(sassInput, sassBuild);
+  gulp.watch(roundSassInput, roundSass);
+  gulp.watch(homeSassInput, homeSass);
+  gulp.watch(commonSassInput, gulp.series(allSass));
   gulp.watch(htmlInput, htmlBuild);
   gulp.watch("*.html").on('change', browserSync.reload);
 }
 
-gulp.task('default', gulp.series([htmlBuild, sassBuild, serve]));
+gulp.task('default', gulp.series([
+  htmlBuild,
+  ...allSass,
+  serve
+]));
 
 // function watch() {
 //   return gulp

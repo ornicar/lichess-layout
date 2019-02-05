@@ -1,7 +1,3 @@
-/* Scaffolding
-=============== */
-
-// HTML base
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,14 +6,12 @@ html {
   overflow-x: hidden;
 }
 
-// Body base
 body {
   color: $font-color;
   background: $background;
   font-size: $body-font-size;
 }
 
-// Link styling
 a {
   color: $link-color;
   text-decoration: none;

@@ -52,6 +52,21 @@ body {
   }
 }
 
+.site__top .site__title {
+  @include breakpoint($col-3) {
+    display: none;
+  }
+}
+body > .site__title {
+  display: none;
+  @include breakpoint($col-3) {
+    display: block;
+    grid-row: 1;
+    grid-column: 2;
+    text-align: center;
+  }
+}
+
 .site__chess {
   grid-column: 1 / 2;
   grid-row: 2;

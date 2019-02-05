@@ -23,9 +23,6 @@ $title-visible: $xx-small;
   @include breakpoint($xx-small) {
     display: block;
   }
-  @include breakpoint($col-3) {
-    display: none;
-  }
   line-height: calc(#{$header-tiny} - 3px);
   font-size: 1.5rem;
   @include breakpoint($short) {
@@ -51,14 +48,7 @@ $title-visible: $xx-small;
   }
 }
 body > .site__title {
-  display: none;
   margin: 0;
-  @include breakpoint($col-3) {
-    display: block;
-    grid-row: 1;
-    grid-column: 2;
-    text-align: center;
-  }
 }
 
 .site__buttons {
