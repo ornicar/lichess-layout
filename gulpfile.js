@@ -5,9 +5,14 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
-const roundSassInput = 'src/scss/round/**/*.scss';
-const lobbySassInput = 'src/scss/lobby/**/*.scss';
-const commonSassInput = 'src/scss/common/**/*.scss';
+const sassModules = ['common', 'round', 'lobby', 'palette'].reduce((mods, key) => {
+  mods[key] = {
+    key: key,
+    files: 'src/scss/' + key + '/**/*.scss',
+    builds: 'src/scss/' + key + '/build/*.scss'
+  };
+  return mods;
+}, {});
 const sassOutput = 'assets/css';
 
 const htmlInput = 'src/html/**/*.html';
@@ -23,27 +28,25 @@ const autoprefixerOptions = {
   browsers: 'last 5 versions, Firefox ESR, not IE < 12, not < 0.1%, not IE_Mob < 12'.split(', ')
 };
 
-const htmlBuild = shell.task('eleventy');
+const htmlBuild = nameFun('html', shell.task('eleventy'));
 
 gulp.task('html', htmlBuild);
 
-function sassBuilder(input) {
-  return function() {
+function sassBuilder(module) {
+  return nameFun(module.key, () => {
     return gulp
-      .src(input.replace(/\*\*\/\*\.scss/, 'build/*.scss'))
+      .src(module.builds)
       .pipe(sourcemaps.init())
       .pipe(sass(sassOptions).on('error', sass.logError))
       .pipe(sourcemaps.write())
       .pipe(autoprefixer(autoprefixerOptions))
       .pipe(gulp.dest(sassOutput))
       .pipe(browserSync.stream());
-  }
+  });
 }
-const roundSass = sassBuilder(roundSassInput);
-const lobbySass = sassBuilder(lobbySassInput);
-const allSass = [lobbySass, roundSass];
+const sassBuilders = Object.values(sassModules).map(sassBuilder);
 
-gulp.task('sass', gulp.series(allSass));
+gulp.task('sass', gulp.series(sassBuilders));
 
 function serve() {
   browserSync.init({
@@ -52,16 +55,14 @@ function serve() {
     }
   });
 
-  gulp.watch(roundSassInput, roundSass);
-  gulp.watch(lobbySassInput, lobbySass);
-  gulp.watch(commonSassInput, gulp.series(allSass));
+  Object.values(sassModules).filter(m => m.key != 'common').forEach(module => gulp.watch(module.files, sassBuilder(module)));
+  gulp.watch(sassModules.common.files, gulp.parallel(sassBuilders));
   gulp.watch(htmlInput, htmlBuild);
   gulp.watch(htmlOutput).on('change', browserSync.reload);
 }
 
 gulp.task('default', gulp.series([
-  htmlBuild,
-  ...allSass,
+  gulp.parallel([htmlBuild, ...sassBuilders]),
   serve
 ]));
 
@@ -83,3 +84,8 @@ gulp.task('prod', function () {
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(gulp.dest(sassOutput));
 });
+
+function nameFun(name, f) {
+  Object.defineProperty(f, 'name', {value: name, writable: false});
+  return f;
+}

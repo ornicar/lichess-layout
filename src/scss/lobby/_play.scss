@@ -16,7 +16,7 @@
 .lobby__play-buttons {
   & .button {
     width: 100%;
-    margin: .2rem 0;
+    margin-bottom: .4rem;
     padding: .5rem;
     @include breakpoint($col-3) {
       margin: 1rem 0;

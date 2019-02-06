@@ -15,35 +15,30 @@
     }
     cursor: pointer;
 
-    & span,
-    & span::after,
-    & span::before {
-      display: block;
-      margin-top: -1.5px;
-      position: absolute;
-      width: 23px;
-      height: 2px;
-      transition-timing-function: ease;
-      transition-duration: .15s;
-      transition-property: transform;
-      border-radius: 3px;
-      background-color: $c-font-dim;
-      @include breakpoint($short) {
-        width: 34px;
-        height: 3px;
-      }
-    }
     & span {
+      &,
+      &::after,
+      &::before {
+        display: block;
+        margin-top: -1.5px;
+        position: absolute;
+        width: 23px;
+        height: 2px;
+        border-radius: 3px;
+        background-color: $c-font-dim;
+        @include breakpoint($short) {
+          width: 34px;
+          height: 3px;
+        }
+      }
       top: 50%;
       left: 8.5px;
       @include breakpoint($short) {
         left: 13px;
       }
-      transition-duration: 0.22s;
-      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition: transform 0.22s, cubic-bezier(0.55, 0.055, 0.675, 0.19);
       &::after,
       &::before {
-        display: block;
         content: "";
       }
       &::before {
@@ -64,7 +59,7 @@
       }
     }
     .topnav-toggle:checked ~ & {
-      background: $c-background2;
+      background: $c-background-clear;
       & span {
         transform: rotate(225deg);
         transition-delay: 0.12s;
@@ -93,7 +88,7 @@
     }
     bottom: 0;
     left: 0;
-    background: $c-background2;
+    background: $c-background-clear;
     transform: scale(0, 1);
     transform-origin: left;
     transition: transform 200ms ease-in-out;

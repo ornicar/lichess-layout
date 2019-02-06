@@ -32,7 +32,7 @@
       }
       &:hover > a {
         height: var(--nav-section-hover);
-        background: $c-background2;
+        background: $c-background-clear;
         color: $c-font-clear;
       }
       &:hover div {
@@ -43,7 +43,7 @@
       display: none;
       position: absolute;
       left: 0;
-      background: $c-background2;
+      background: $c-background-clear;
       width: 10rem;
       box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.3);
       & a {

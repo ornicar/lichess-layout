@@ -3,7 +3,7 @@ $col-3: $large;
 
 .site-content {
 
-  grid-template-rows: min-content minmax(500px, calc(75vh - var(--site-header-size) - 200px));
+  grid-template-rows: min-content minmax(400px, calc(80vh - var(--site-header-size) - 150px));
 
   grid-template-areas:
   "play"
