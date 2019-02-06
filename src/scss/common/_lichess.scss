@@ -15,4 +15,6 @@
 
 @import 'vendors/chessground';
 
-@import 'layout/top';
+@import 'components/site-header';
+@import 'components/topnav-hidden';
+@import 'components/topnav-visible';

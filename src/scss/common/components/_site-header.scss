@@ -1,0 +1,60 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  position: relative;
+  z-index: z('site-header');
+  // background: hsl(0, 0%, 84%);
+}
+
+.site-title-nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.site-title {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 .5rem;
+  display: none;
+  @include breakpoint($xx-small) {
+    display: block;
+  }
+  line-height: calc(#{$header-tiny} - 3px);
+  font-size: 1.5rem;
+  @include breakpoint($short) {
+    line-height: $header-big;
+    font-size: 1.8rem;
+  }
+  @include breakpoint($short $medium) {
+    line-height: 54px;
+    margin: 0 1rem;
+  }
+  & a {
+    color: $c-font;
+    text-decoration: none;
+    &:hover {
+      color: $c-primary;
+      & span {
+        color: $c-primary-dim;
+      }
+    }
+  }
+  & span {
+    color: $c-font-dim;
+  }
+}
+
+.site-buttons {
+  display: flex;
+  height: $header-tiny;
+  @include breakpoint($short) {
+    height: $header-big;
+  }
+  align-items: center;
+  & .link {
+    color: $c-font;
+    text-decoration: none;
+    padding: 0 0.5rem;
+  }
+}

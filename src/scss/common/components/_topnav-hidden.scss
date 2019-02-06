@@ -1,0 +1,161 @@
+@include breakpoint($not-medium) {
+
+  .topnav-toggle {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .hamburger {
+    position: relative;
+    flex: 0 0 40px;
+    @include breakpoint($short) {
+      flex-basis: 60px;
+    }
+    cursor: pointer;
+
+    & span,
+    & span::after,
+    & span::before {
+      display: block;
+      margin-top: -1.5px;
+      position: absolute;
+      width: 23px;
+      height: 2px;
+      transition-timing-function: ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      border-radius: 3px;
+      background-color: $c-font-dim;
+      @include breakpoint($short) {
+        width: 34px;
+        height: 3px;
+      }
+    }
+    & span {
+      top: 50%;
+      left: 8.5px;
+      @include breakpoint($short) {
+        left: 13px;
+      }
+      transition-duration: 0.22s;
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      &::after,
+      &::before {
+        display: block;
+        content: "";
+      }
+      &::before {
+        top: -6px;
+        @include breakpoint($short) {
+          top: -9px;
+        }
+        transition: top 0.1s 0.25s ease-in,
+        opacity 0.1s ease-in;
+      }
+      &::after {
+        bottom: -7px;
+        @include breakpoint($short) {
+          bottom: -10px;
+        }
+        transition: bottom 0.1s 0.25s ease-in,
+        transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+    }
+    .topnav-toggle:checked ~ & {
+      background: $c-background2;
+      & span {
+        transform: rotate(225deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        &::before {
+          top: 0;
+          opacity: 0;
+          transition: top 0.1s ease-out,
+          opacity 0.1s 0.12s ease-out;
+        }
+        &::after {
+          bottom: 0;
+          transform: rotate(-90deg);
+          transition: bottom 0.1s ease-out,
+          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+      }
+    }
+  }
+
+  #topnav {
+    position: fixed;
+    top: $header-tiny;
+    @include breakpoint($short) {
+      top: $header-big;
+    }
+    bottom: 0;
+    left: 0;
+    background: $c-background2;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform 200ms ease-in-out;
+    padding: 0 0 1.2rem 1.2rem;
+    overflow-y: auto;
+    white-space: nowrap;
+    line-height: 40px;
+    box-shadow: 2px 3px 6px hsla(0, 0, 0%, 0.3);
+    border-radius: 0 3px 0 0;
+
+    & section {
+      margin-top: 1rem;
+      & > a {
+        font-weight: bold;
+      }
+      & div {
+        display: flex;
+        flex-flow: column;
+        & a {
+          padding: 0 1.2rem;
+          &:hover {
+            background: $c-primary;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    & a {
+      color: $c-font;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 75ms ease-in-out;
+    }
+
+    .topnav-toggle:checked ~ & {
+      transform: scale(1, 1);
+      & a {
+        opacity: 1;
+        transition: opacity 125ms ease-in-out 125ms;
+      }
+    }
+  }
+
+  .topnav-mask {
+    display: none;
+    .topnav-toggle:checked ~ & {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $c-page-mask;
+      overflow-y: scroll;
+    }
+  }
+
+  body.masked {
+    /* prevent scrolling while topnav is open */
+    overflow: hidden;
+    /* awkwardly make up for the disappearance of the scroll bar */
+    padding-right: 15px;
+  }
+}

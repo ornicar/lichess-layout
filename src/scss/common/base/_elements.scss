@@ -3,13 +3,18 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
   font-size: $font-size;
-  overflow-x: hidden;
 }
 
 body {
   background: $c-background linear-gradient(to bottom, $c-body-gradient, $c-background 116px) no-repeat;
   color: $c-font;
   font-size: 1rem;
+  overflow-x: hidden;
+
+  --site-header-size: #{$header-tiny};
+  @include breakpoint($short) {
+    --site-header-size: #{$header-big};
+  }
 }
 
 content {

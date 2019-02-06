@@ -1,0 +1,64 @@
+@include breakpoint($medium) {
+
+  .hamburger,
+  .topnav-mask,
+  .topnav-toggle {
+    display: none;
+  }
+
+  #topnav {
+    --nav-section: 26px;
+    --nav-section-hover: 35px;
+    @include breakpoint($short) {
+      --nav-section: 40px;
+      --nav-section-hover: 48px;
+    }
+    display: flex;
+    & a {
+      color: $c-font;
+    }
+    & section {
+      position: relative;
+      height: var(--nav-section);
+      & > a {
+        display: block;
+        height: var(--nav-section);
+        line-height: $header-tiny;
+        @include breakpoint($short) {
+          line-height: $header-big;
+        }
+        padding: 0 12px;
+        text-transform: uppercase;
+      }
+      &:hover > a {
+        height: var(--nav-section-hover);
+        background: $c-background2;
+        color: $c-font-clear;
+      }
+      &:hover div {
+        display: block;
+      }
+    }
+    & div {
+      display: none;
+      position: absolute;
+      left: 0;
+      background: $c-background2;
+      width: 10rem;
+      box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.3);
+      & a {
+        display: block;
+        padding: 6px 12px;
+        color: $c-font-clear;
+        &:hover {
+          background: $c-primary;
+          color: $c-primary-over;
+        }
+      }
+    }
+    &.blind div {
+      display: block;
+      margin-left: -9000px;
+    }
+  }
+}
