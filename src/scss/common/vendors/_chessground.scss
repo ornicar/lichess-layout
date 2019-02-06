@@ -64,6 +64,8 @@ $board-image-path: "../../assets/img/chessground/board";
 }
 .cg-board-wrap {
   position: relative;
+  /* prevents width issues with rank coords */
+  overflow: hidden;
   & piece {
     position: absolute;
     top: 0;
