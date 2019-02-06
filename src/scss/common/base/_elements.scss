@@ -11,6 +11,8 @@ body {
   @include breakpoint($short) {
     --site-header-size: #{$header-big};
   }
+
+  margin-bottom: $block-gap;
 }
 
 content {

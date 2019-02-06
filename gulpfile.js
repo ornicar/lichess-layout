@@ -5,7 +5,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
-const sassModules = ['common', 'round', 'lobby', 'palette'].reduce((mods, key) => {
+const sassModules = ['common', 'round', 'lobby', 'tournament', 'palette'].reduce((mods, key) => {
   mods[key] = {
     key: key,
     files: 'src/scss/' + key + '/**/*.scss',
