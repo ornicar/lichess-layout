@@ -1,0 +1,85 @@
+$col-1-2: $xx-small;
+$col-2: $small;
+$col-3: $large;
+
+.tour-show {
+  display: grid;
+  grid-template-areas:
+  'app'
+  'infochat'
+  'chat'
+  'tv'
+  'games';
+
+  @include breakpoint($col-1-2) {
+    grid-template-columns: 0 1fr 1fr 0;
+    grid-template-rows: fit-content(90vh);
+    grid-template-areas:
+    '. app      app .'
+    '. infochat games .'
+    '. .        tv .';
+  }
+  @include breakpoint($col-2) {
+    grid-template-columns: 0 minmax(200px, 1fr) 2fr 0;
+    grid-template-rows: fit-content(90vh) minmax(auto, 100vh);
+    grid-template-areas:
+    '. infochat app .'
+    '. games    tv  .';
+  }
+  @include breakpoint($col-3) {
+    grid-template-columns: auto minmax(200px, 300px) minmax(500px, 700px) minmax(200px, 300px) auto;
+    grid-template-rows: auto fit-content(0);
+    grid-template-areas:
+    '. infochat app tv .'
+    '. infochat app games .'
+    '. .        .   games .';
+  }
+
+  & .placeholder {
+    height: auto;
+  }
+
+  &__info-chat {
+    grid-area: infochat;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  &__info {
+    grid-area: info;
+    flex: 0 0 10rem;
+    & .placeholder { height: 10rem; }
+  }
+  &__tv {
+    grid-area: tv;
+    max-width: calc(100vh - 4em);
+  }
+  &__games {
+    grid-area: games;
+    & .placeholder { height: 4rem };
+  }
+  &__app {
+    grid-area: app;
+    & .placeholder { height: 35rem };
+  }
+  & .chat {
+    flex: 1 1 100%;
+    margin-top: $block-gap;
+  }
+  & .mini-board-container {
+    margin: auto;
+    max-width: calc(100vh - 4em);
+    max-height: 100vw;
+  }
+}
+
+.chat {
+  display: flex;
+  flex-flow: column nowrap;
+  &__lines {
+    flex: 1 1 200px;
+    & .placeholder { height: 100%; }
+  }
+  &__input {
+    flex: 0 0 40px;
+  }
+}
