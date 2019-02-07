@@ -1,7 +1,7 @@
 $mq-col-2: $mq-x-small;
 $mq-col-3: $mq-large;
 
-.site-content {
+.round {
 
   // --zoom: 85; defined in the HTML, loaded from server saved config
   --scale: calc((var(--zoom) / 100) * 0.5 + 0.5);

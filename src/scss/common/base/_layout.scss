@@ -1,9 +1,9 @@
-.site-content {
+body {
+  margin-bottom: $block-gap;
+}
+
+main {
   display: grid;
   grid-column-gap: $block-gap;
   grid-row-gap: $block-gap;
-}
-
-body {
-  margin-bottom: $block-gap;
 }

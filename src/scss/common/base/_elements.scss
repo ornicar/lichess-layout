@@ -1,5 +1,5 @@
 html {
-  font: 1rem/1.6 'Noto Sans', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;;
+  font: 1rem/1.6 'Noto Sans', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
 }
 
 body {
@@ -11,6 +11,13 @@ body {
   @include breakpoint($mq-site-header-tall) {
     --site-header-height: #{$site-header-tall-height};
   }
+
+  margin-bottom: $block-gap;
+}
+
+main {
+  display: grid;
+  grid-gap: $block-gap $block-gap;
 }
 
 a {

@@ -1,7 +1,7 @@
 $mq-col-2: $mq-x-small;
 $mq-col-3: $mq-large;
 
-.site-content {
+.lobby {
 
   grid-template-rows: min-content minmax(400px, calc(80vh - var(--site-header-height) - 150px));
 
@@ -54,18 +54,18 @@ $mq-col-3: $mq-large;
     ". .      patron patron .      ."
     ". .      about  about  .      .";
   }
-}
 
-.lobby__side { grid-area: side; }
-.lobby__app { grid-area: app; }
-.lobby__play-counters { grid-area: play; }
-.lobby__tv { grid-area: tv; }
-.lobby__leaderboard { grid-area: leader; }
-.lobby__winners { grid-area: winner; }
-.lobby__puzzle { grid-area: puzzle; }
-.lobby__tournaments { grid-area: tours; }
-.lobby__simuls { grid-area: simuls; }
-.lobby__forum { grid-area: forum; }
-.lobby__blog { grid-area: blog; }
-.lobby__patron { grid-area: patron; }
-.lobby__about  { grid-area: about ; }
+  &__side { grid-area: side; }
+  &__app { grid-area: app; }
+  &__play-counters { grid-area: play; }
+  &__tv { grid-area: tv; }
+  &__leaderboard { grid-area: leader; }
+  &__winners { grid-area: winner; }
+  &__puzzle { grid-area: puzzle; }
+  &__tournaments { grid-area: tours; }
+  &__simuls { grid-area: simuls; }
+  &__forum { grid-area: forum; }
+  &__blog { grid-area: blog; }
+  &__patron { grid-area: patron; }
+  &__about  { grid-area: about ; }
+}
