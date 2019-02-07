@@ -1,0 +1,35 @@
+$mq-padded: $mq-x-small;
+$mq-col-2: $mq-subnav-side;
+
+.page-menu {
+
+  grid-template-columns: 0 auto 0;
+  grid-template-areas:
+  '. menu .'
+  '. content .';
+
+  grid-column-gap: 0;
+
+  @include breakpoint($mq-padded) {
+    grid-template-columns: $block-gap auto $block-gap;
+  }
+
+  @include breakpoint($mq-col-2) {
+    grid-template-columns: $block-gap 1fr minmax(min-content, 300px) minmax(max-content, 900px) 1fr $block-gap;
+    grid-template-rows: min-content;
+    grid-template-areas:
+    '. . menu content . .';
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+  &__content {
+    grid-area: content;
+    height: 100%;
+    & .placeholder {
+      border-radius: 3px;
+      min-height: 600px;
+    }
+  }
+}

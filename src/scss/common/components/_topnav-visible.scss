@@ -26,14 +26,17 @@
         line-height: var(--site-header-height);
         padding: 0 12px;
         text-transform: uppercase;
+        border-left: 2px solid transparent;
       }
       &:hover > a {
         height: var(--nav-section-hover);
         background: $c-background-clear;
         color: $c-font-clear;
+        border-color: $c-primary;
       }
       &:hover div {
         display: block;
+        border-left: 2px solid $c-primary;
       }
     }
     & div {
