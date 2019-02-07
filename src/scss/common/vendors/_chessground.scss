@@ -8,9 +8,6 @@
 $piece-image-path: "../../assets/img/chessground/piece";
 $board-image-path: "../../assets/img/chessground/board";
 
-@mixin piece-img($name) {
-  background-image: url("#{$piece-image-path}/#{$name}");
-}
 @mixin board-img($name) {
   background-image: url("#{$board-image-path}/#{$name}");
 }
@@ -152,41 +149,32 @@ $board-image-path: "../../assets/img/chessground/board";
   @include board-img("blue.svg");
 }
 
-.cburnett .cg-board-wrap piece.pawn.white {
-  @include piece-img("cburnett/wP.svg");
-}
-.cburnett .cg-board-wrap piece.bishop.white {
-  @include piece-img("cburnett/wB.svg");
-}
-.cburnett .cg-board-wrap piece.knight.white {
-  @include piece-img("cburnett/wN.svg");
-}
-.cburnett .cg-board-wrap piece.rook.white {
-  @include piece-img("cburnett/wR.svg");
-}
-.cburnett .cg-board-wrap piece.queen.white {
-  @include piece-img("cburnett/wQ.svg");
-}
-.cburnett .cg-board-wrap piece.king.white {
-  @include piece-img("cburnett/wK.svg");
-}
-.cburnett .cg-board-wrap piece.pawn.black {
-  @include piece-img("cburnett/bP.svg");
-}
-.cburnett .cg-board-wrap piece.bishop.black {
-  @include piece-img("cburnett/bB.svg");
-}
-.cburnett .cg-board-wrap piece.knight.black {
-  @include piece-img("cburnett/bN.svg");
-}
-.cburnett .cg-board-wrap piece.rook.black {
-  @include piece-img("cburnett/bR.svg");
-}
-.cburnett .cg-board-wrap piece.queen.black {
-  @include piece-img("cburnett/bQ.svg");
-}
-.cburnett .cg-board-wrap piece.king.black {
-  @include piece-img("cburnett/bK.svg");
+$piece-files: (
+'white': (
+'pawn': 'wP',
+'knight': 'wN',
+'bishop': 'wB',
+'rook': 'wR',
+'queen': 'wQ',
+'king': 'wK',
+),
+'black': (
+'pawn': 'bP',
+'knight': 'bN',
+'bishop': 'bB',
+'rook': 'bR',
+'queen': 'bQ',
+'king': 'bK',
+)
+);
+
+$set: 'cburnett';
+@each $color, $pieces in $piece-files {
+  @each $name, $file in $pieces {
+    .#{$set} piece.#{$name}.#{$color} {
+      background-image: url("#{$piece-image-path}/#{$set}/#{$file}.svg");
+    }
+  }
 }
 
 /* inner coords */
