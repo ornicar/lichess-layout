@@ -1,0 +1,47 @@
+$mq-col-2: $mq-x-small;
+$mq-col-3: $mq-large;
+
+.puzzle {
+
+  // --zoom: 85; defined in the HTML, loaded from server saved config
+  --scale: calc((var(--zoom) / 100) * 0.5 + 0.5);
+
+  display: grid;
+
+  grid-template-areas:
+  'app'
+  'meta'
+  'rating';
+
+  @include breakpoint($mq-col-2) {
+    grid-columns: 1fr 1fr;
+    grid-template-areas:
+    'app  app'
+    'meta rating';
+  }
+
+  @include breakpoint($mq-col-3) {
+    grid-template-columns:
+    minmax(0, 1fr)
+    minmax(200px, 300px)
+    minmax(600px, calc(100vh * var(--scale) - var(--site-header-height)))
+    minmax(200px, 300px)
+    minmax(0, 1fr);
+    grid-template-areas:
+    ". meta   app app ."
+    ". rating app app ."
+    ". .      app app .";
+  }
+}
+
+.puzzle__app {
+  grid-area: app;
+}
+.puzzle__meta {
+  grid-area: meta;
+  & placeholder { height: 14rem }
+}
+.puzzle__rating {
+  grid-area: rating;
+  & placeholder { height: 14rem }
+}

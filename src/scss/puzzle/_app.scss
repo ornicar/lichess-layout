@@ -1,0 +1,70 @@
+@mixin col-2-grid-columns-with-gaps($left, $center, $right) {
+  grid-template-columns:
+  $left
+  minmax(200px, calc((100vh - var(--site-header-height))))
+  $center
+  minmax(200px, auto)
+  $right;
+  @include breakpoint($mq-zoom-enabled) {
+    grid-template-columns:
+    $left
+    minmax(200px, calc((100vh * var(--scale) - var(--site-header-height))))
+    $center
+    minmax(200px, auto)
+    $right;
+  }
+}
+
+.puzzle__app {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  'board    board'
+  'timeline timeline'
+  'state    moves';
+
+  @include breakpoint($mq-col-2) {
+    @include col-2-grid-columns-with-gaps(auto, minmax($block-gap, auto), auto);
+    grid-template-rows: auto minmax(10rem, 50vh) 1fr auto;
+    grid-template-areas:
+    '. board . .'
+    '. board . moves'
+    '. board . state'
+    '. board . .'
+    'timeline timeline timeline timeline';
+  }
+
+  @include breakpoint($mq-col-3) {
+    @include col-2-grid-columns-with-gaps(0, $block-gap, 0);
+  }
+
+  &__board {
+    grid-area: board;
+    @include breakpoint($mq-col-2) {
+      /* Align vertically when zoomed out */
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+    }
+    & .cg-board-wrap {
+      @extend %square;
+    }
+  }
+  &__moves {
+    grid-area: moves;
+    placeholder { height: 10rem; }
+    @include breakpoint($mq-col-2) {
+      placeholder { height: 100%; }
+    }
+  }
+  &__state {
+    grid-area: state;
+    placeholder { height: 10rem; }
+  }
+  &__timeline {
+    grid-area: timeline;
+    placeholder { margin-top: $block-gap; height: 3rem; }
+  }
+}
