@@ -16,14 +16,14 @@ $col-2-actions-height: 60px;
 @mixin col-2-grid-columns-with-gaps($left, $center, $right) {
   grid-template-columns:
   $left
-  minmax(200px, calc((100vh - var(--site-header-size))))
+  minmax(200px, calc((100vh - var(--site-header-height))))
   $center
   minmax(200px, auto)
   $right;
   @include breakpoint($zoom-enabled) {
     grid-template-columns:
     $left
-    minmax(200px, calc((100vh * var(--scale) - var(--site-header-size))))
+    minmax(200px, calc((100vh * var(--scale) - var(--site-header-height))))
     $center
     minmax(200px, auto)
     $right;
@@ -120,7 +120,7 @@ $col-2-actions-height: 60px;
     @include breakpoint($portrait) {
       /* In portrait single column, make sure both clocks and the board fit in the viewport.
        * If they don't, limit the board width */
-max-width: calc(100vh - var(--site-header-size) - (#{$col-1-clock-height} * 2));
+max-width: calc(100vh - var(--site-header-height) - (#{$col-1-clock-height} * 2));
     }
     & .cg-board-wrap {
       @extend %square;

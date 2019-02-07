@@ -1,4 +1,4 @@
-@include breakpoint($not-medium) {
+@include breakpoint($topnav-hidden) {
 
   .topnav-toggle {
     display: block;
@@ -10,7 +10,7 @@
   .hamburger {
     position: relative;
     flex: 0 0 40px;
-    @include breakpoint($short) {
+    @include breakpoint($site-header-tall) {
       flex-basis: 60px;
     }
     cursor: pointer;
@@ -26,14 +26,14 @@
         height: 2px;
         border-radius: 3px;
         background-color: $c-font-dim;
-        @include breakpoint($short) {
+        @include breakpoint($site-header-tall) {
           width: 34px;
           height: 3px;
         }
       }
       top: 50%;
       left: 8.5px;
-      @include breakpoint($short) {
+      @include breakpoint($site-header-tall) {
         left: 13px;
       }
       transition: transform 0.22s, cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -43,7 +43,7 @@
       }
       &::before {
         top: -6px;
-        @include breakpoint($short) {
+        @include breakpoint($site-header-tall) {
           top: -9px;
         }
         transition: top 0.1s 0.25s ease-in,
@@ -51,7 +51,7 @@
       }
       &::after {
         bottom: -7px;
-        @include breakpoint($short) {
+        @include breakpoint($site-header-tall) {
           bottom: -10px;
         }
         transition: bottom 0.1s 0.25s ease-in,
@@ -83,7 +83,7 @@
   #topnav {
     position: fixed;
     top: $header-tiny;
-    @include breakpoint($short) {
+    @include breakpoint($site-header-tall) {
       top: $header-big;
     }
     bottom: 0;

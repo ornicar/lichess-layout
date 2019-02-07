@@ -7,9 +7,9 @@ body {
   color: $c-font;
   overflow-x: hidden;
 
-  --site-header-size: #{$header-tiny};
-  @include breakpoint($short) {
-    --site-header-size: #{$header-big};
+  --site-header-height: #{$site-header-short-height};
+  @include breakpoint($site-header-tall) {
+    --site-header-height: #{$site-header-tall-height};
   }
 
   margin-bottom: $block-gap;

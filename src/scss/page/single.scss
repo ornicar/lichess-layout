@@ -1,0 +1,15 @@
+$padded: $x-small;
+
+.page-single {
+
+  @include breakpoint($padded) {
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+    &__content {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+  }
+
+  &__content {
+    & .placeholder { height: 40rem; }
+  }
+}

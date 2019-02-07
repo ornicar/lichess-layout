@@ -24,7 +24,7 @@ $col-3: $large;
     grid-template-columns:
     minmax(0, 1fr)
     minmax(200px, 300px)
-    minmax(600px, calc(100vh * var(--scale) - var(--site-header-size)))
+    minmax(600px, calc(100vh * var(--scale) - var(--site-header-height)))
     minmax(200px, 300px)
     minmax(0, 1fr);
     grid-template-areas:

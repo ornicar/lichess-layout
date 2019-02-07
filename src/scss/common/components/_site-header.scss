@@ -1,10 +1,9 @@
 .site-header {
+  height: var(--site-header-height);
   display: flex;
   justify-content: space-between;
-  align-content: flex-end;
   position: relative;
   z-index: z('site-header');
-  // background: hsl(0, 0%, 84%);
 }
 
 .site-title-nav {
@@ -26,8 +25,8 @@
     line-height: $header-big;
     font-size: 1.8rem;
   }
-  @include breakpoint($short $medium) {
-    line-height: 54px;
+  @include breakpoint($site-header-tall $topnav-visible) {
+    line-height: 44px;
     margin: 0 1rem;
   }
   & a {
