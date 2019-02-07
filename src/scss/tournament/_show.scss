@@ -45,7 +45,7 @@ $mq-col-3: $mq-large;
 
   &__info {
     grid-area: info;
-    & .placeholder { height: 10rem; }
+    & placeholder { height: 10rem; }
   }
   & .chat {
     grid-area: chat;
@@ -57,11 +57,11 @@ $mq-col-3: $mq-large;
   }
   &__games {
     grid-area: games;
-    & .placeholder { height: 30rem };
+    & placeholder { height: 30rem };
   }
   &__app {
     grid-area: app;
-    & .placeholder { height: 35rem };
+    & placeholder { height: 35rem };
   }
   & .mini-board-container {
     margin: auto;

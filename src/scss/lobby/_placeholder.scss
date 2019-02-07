@@ -1,17 +1,11 @@
-.lobby__streams .placeholder {
+.lobby__streams placeholder {
   height: 5rem;
   margin-bottom: $block-gap;
 }
-.lobby__leaderboard .placeholder,
-.lobby__winners .placeholder,
-.lobby__tournaments .placeholder,
-.lobby__simuls .placeholder,
-.lobby__forum .placeholder,
-.lobby__blog .placeholder,
-.lobby__patron .placeholder {
+.lobby placeholder {
   min-height: 15rem;
 }
-.lobby__tournaments .placeholder {
+.lobby__tournaments placeholder {
   height: 100%;
   @include breakpoint($mq-col-3) {
     height: 15rem;

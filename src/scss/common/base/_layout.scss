@@ -1,0 +1,23 @@
+.site-content-center {
+  display: flex;
+}
+
+.site-content {
+  display: grid;
+  grid-column-gap: $block-gap;
+  grid-row-gap: $block-gap;
+  margin: auto;
+  // width: 100%;
+  flex: 1 1 auto;
+}
+
+@include breakpoint($mq-content-margin) {
+  .site-content-margin,
+  .site-content-center {
+    margin: $block-gap;
+    margin-top: 0;
+  }
+  .site-content {
+    flex: 0 1 auto;
+  }
+}

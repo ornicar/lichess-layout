@@ -11,16 +11,6 @@ body {
   @include breakpoint($mq-site-header-tall) {
     --site-header-height: #{$site-header-tall-height};
   }
-
-  margin-bottom: $block-gap;
-}
-
-content {
-  display: grid;
-  margin: auto;
-  grid-column-gap: $block-gap;
-  grid-row-gap: $block-gap;
-  // overflow-x: hidden;
 }
 
 a {

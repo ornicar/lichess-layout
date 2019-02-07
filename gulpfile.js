@@ -1,3 +1,4 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const shell = require('gulp-shell');
 const sass = require('gulp-sass');
@@ -5,21 +6,15 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
-const sassModules = [
-  'common',
-  'page',
-  'round',
-  'lobby',
-  'tournament',
-  'palette'
-].reduce((mods, key) => {
-  mods[key] = {
-    key: key,
-    files: 'src/scss/' + key + '/**/*.scss',
-    builds: 'src/scss/' + key + '/build/*.scss'
-  };
-  return mods;
-}, {});
+const sassModules = fs.readdirSync('src/scss/')
+  .reduce((mods, key) => {
+    mods[key] = {
+      key: key,
+      files: 'src/scss/' + key + '/**/*.scss',
+      builds: 'src/scss/' + key + '/build/*.scss'
+    };
+    return mods;
+  }, {});
 const sassOutput = 'assets/css';
 
 const htmlInput = 'src/html/**/*.html';

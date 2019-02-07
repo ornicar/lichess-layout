@@ -9,43 +9,43 @@ $mq-col-3: $mq-large;
   'featured';
 
   @include breakpoint($mq-col-2) {
-    grid-template-columns: 0 1fr 1fr 0;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto fit-content(20vh);
     grid-template-areas:
-    '. schedule    schedule .'
-    '. leaderboard featured .'
-    '. finished    finished .';
+    'schedule    schedule'
+    'leaderboard featured'
+    'finished    finished';
   }
   @include breakpoint($mq-col-3) {
-    grid-template-columns: 1fr 350px minmax(auto, 900px) 1fr;
+    grid-template-columns: 350px minmax(auto, 900px);
     grid-template-rows: auto fit-content(0);
     grid-template-areas:
-    '. leaderboard schedule .'
-    '. featured    schedule .'
-    '. featured    finished .';
+    'leaderboard schedule'
+    'featured    schedule'
+    'featured    finished';
   }
 
-  & .placeholder {
+  & placeholder {
     height: 20rem;
   }
 
   &__schedule {
     grid-area: schedule;
-    & .placeholder { height: 50rem };
+    & placeholder { height: 50rem };
   }
   &__leaderboard {
     grid-area: leaderboard;
-    & .placeholder { height: 30rem };
+    & placeholder { height: 30rem };
   }
   &__featured {
     grid-area: featured;
     overflow-y: auto;
-    & .placeholder { height: 90rem };
+    & placeholder { height: 90rem };
   }
   &__finished {
     grid-area: finished;
-    // & .placeholder { height: 130rem };
-    & .placeholder { height: 50rem };
+    // & placeholder { height: 130rem };
+    & placeholder { height: 50rem };
     display: none;
     @include breakpoint($mq-col-2) {
       display: block;
