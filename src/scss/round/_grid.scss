@@ -3,8 +3,11 @@ $mq-col-3: $mq-large;
 
 .round {
 
-  // --zoom: 85; defined in the HTML, loaded from server saved config
-  --scale: calc((var(--zoom) / 100) * 0.5 + 0.5);
+  --board-scale: 1;
+  @include breakpoint($mq-zoom-enabled) {
+    // --zoom: 85; defined in the HTML, loaded from server saved config
+    --board-scale: calc((var(--zoom) / 100) * 0.5 + 0.5);
+  }
 
   grid-template-areas:
   "chess"
@@ -24,7 +27,7 @@ $mq-col-3: $mq-large;
     grid-template-columns:
     minmax(0, 1fr)
     minmax(200px, 300px)
-    minmax(600px, calc(100vh * var(--scale) - var(--site-header-height)))
+    minmax(600px, calc(100vh * var(--board-scale) - var(--site-header-height)))
     minmax(200px, 300px)
     minmax(0, 1fr);
     grid-template-areas:

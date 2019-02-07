@@ -11,6 +11,6 @@ window.onload = function() {
 window.addEventListener('resize', resizeBoard);
 
 document.getElementById('zoom-input').addEventListener('input', function(e) {
-  document.querySelector('.site-content').setAttribute('style', `--zoom: ${parseInt(e.target.value)}`);
+  document.querySelector('main').setAttribute('style', `--zoom: ${parseInt(e.target.value)}`);
   resizeBoard();
 });

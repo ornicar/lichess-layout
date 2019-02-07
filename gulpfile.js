@@ -41,7 +41,7 @@ function sassBuilder(module) {
       .pipe(sourcemaps.init())
       .pipe(sass(sassOptions).on('error', sass.logError))
       .pipe(sourcemaps.write())
-      .pipe(autoprefixer(autoprefixerOptions))
+      // .pipe(autoprefixer(autoprefixerOptions))
       .pipe(gulp.dest(sassOutput))
       .pipe(browserSync.stream());
   });
