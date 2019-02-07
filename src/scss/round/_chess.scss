@@ -64,7 +64,7 @@ $col-2-actions-height: 60px;
   "actions actions"
   "moves   moves";
 
-  @include breakpoint($col-2) {
+  @include breakpoint($mq-col-2) {
     @include col-2-grid-columns-with-gaps(auto, minmax($block-gap, auto), auto);
     @include col-2-grid-rows-with-moves(0);
     grid-template-areas:
@@ -94,7 +94,7 @@ $col-2-actions-height: 60px;
     }
   }
 
-  @include breakpoint($col-3) {
+  @include breakpoint($mq-col-3) {
     @include col-2-grid-columns-with-gaps(0, $block-gap, 0);
       grid-template-areas:
       ". board . ."
@@ -151,7 +151,7 @@ max-width: calc(100vh - var(--site-header-height) - (#{$col-1-clock-height} * 2)
   &__clock-pl { grid-area: clock-pl; }
   &__moves {
     grid-area: moves;
-    @include breakpoint($col-2) {
+    @include breakpoint($mq-col-2) {
       display: none;
       @include breakpoint($mq-room-for-moves) {
         height: 15vh;
@@ -170,12 +170,12 @@ max-width: calc(100vh - var(--site-header-height) - (#{$col-1-clock-height} * 2)
 }
 %round__chess__material {
   display: none;
-  @include breakpoint($col-2) {
+  @include breakpoint($mq-col-2) {
     display: block;
   }
 }
 
-@include breakpoint($col-2) {
+@include breakpoint($mq-col-2) {
   .round__chess__material-op,
   .round__chess__clock-op,
   .round__chess__user-op,

@@ -12,7 +12,7 @@ $mq-col-3: $mq-large;
   "ct-boards";
 
   /* 2 columns */
-  @include breakpoint($col-2) {
+  @include breakpoint($mq-col-2) {
     grid-template-columns: 2fr 3fr;
     grid-template-areas:
     "chess      chess"
@@ -20,7 +20,7 @@ $mq-col-3: $mq-large;
   }
 
   /* 3 columns */
-  @include breakpoint($col-3) {
+  @include breakpoint($mq-col-3) {
     grid-template-columns:
     minmax(0, 1fr)
     minmax(200px, 300px)
@@ -46,7 +46,7 @@ $mq-col-3: $mq-large;
 .round__under-chat {
   grid-area: under-chat;
   display: none;
-  @include breakpoint($col-3) {
+  @include breakpoint($mq-col-3) {
     height: 200px;
     display: flex;
   }
@@ -54,7 +54,7 @@ $mq-col-3: $mq-large;
 .round__under-table {
   grid-area: under-table;
   display: none;
-  @include breakpoint($col-3) {
+  @include breakpoint($mq-col-3) {
     height: 200px;
     display: flex;
   }

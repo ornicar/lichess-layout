@@ -1,4 +1,4 @@
-@include breakpoint($col-3) {
+@include breakpoint($mq-col-3) {
   .lobby__play-counters {
     position: relative;
   }
@@ -18,7 +18,7 @@
     width: 100%;
     margin-bottom: .4rem;
     padding: .5rem;
-    @include breakpoint($col-3) {
+    @include breakpoint($mq-col-3) {
       margin: 1rem 0;
       padding: 1rem;
     }

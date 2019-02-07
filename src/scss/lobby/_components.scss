@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 $block-gap;
-  @include breakpoint($col-2) {
+  @include breakpoint($mq-col-2) {
     display: block;
     margin: 0;
   }

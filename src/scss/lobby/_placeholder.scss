@@ -13,7 +13,7 @@
 }
 .lobby__tournaments .placeholder {
   height: 100%;
-  @include breakpoint($col-3) {
+  @include breakpoint($mq-col-3) {
     height: 15rem;
   }
 }

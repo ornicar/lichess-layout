@@ -20,7 +20,7 @@ $mq-col-3: $mq-large;
   "patron"
   "about";
 
-  @include breakpoint($col-2) {
+  @include breakpoint($mq-col-2) {
 
     grid-template-columns: 1fr repeat(3, minmax(150px, 350px)) 1fr;
 
@@ -38,7 +38,7 @@ $mq-col-3: $mq-large;
     ". .      about  about  .";
   }
 
-  @include breakpoint($col-3) {
+  @include breakpoint($mq-col-3) {
 
     grid-template-columns: 1fr repeat(4, minmax(150px, 350px)) 1fr;
 
