@@ -46,6 +46,7 @@
       background: $c-background-clear;
       width: 10rem;
       box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.3);
+      border-radius: 0 3px 3px 3px;
       & a {
         display: block;
         padding: 6px 12px;
@@ -53,6 +54,12 @@
         &:hover {
           background: $c-primary;
           color: $c-primary-over;
+        }
+        &:first-child {
+          border-radius: 0 3px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 3px 1px ;
         }
       }
     }

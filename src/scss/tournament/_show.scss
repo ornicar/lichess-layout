@@ -12,13 +12,13 @@ $mq-col-3: $mq-large;
   'games';
 
   @include breakpoint($mq-col-1-2) {
-    grid-template-columns: 0 1fr 1fr 0;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: fit-content(90vh);
     grid-template-areas:
-    '. app      app .'
-    '. chat     info .'
-    '. chat     tv .'
-    '. games    games .';
+    'app   app'
+    'chat  info'
+    'chat  tv'
+    'games games';
   }
   @include breakpoint($mq-col-2) {
     grid-template-columns: 0 minmax(200px, 1fr) 2fr 0;

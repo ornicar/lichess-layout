@@ -1,6 +1,18 @@
+$mq-padded: $mq-x-small;
+
 .page-single {
 
-  max-width: 1200px;
+  grid-column-gap: 0;
+
+  grid-template-columns: 0 minmax(auto, 1200px) 0;
+  &__content {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  @include breakpoint($mq-padded) {
+    grid-column-gap: $block-gap;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+  }
 
   &__content {
     & placeholder { height: 40rem; }
