@@ -2,8 +2,7 @@ playground for new lichess layout
 
 ## Online demo
 
-- https://ornicar.github.io/lichess-layout/play.html
-- https://ornicar.github.io/lichess-layout/home.html
+https://ornicar.github.io/lichess-layout/
 
 ## Install
 
@@ -20,8 +19,7 @@ The page will update on save as long as `gulp` is running.
 
 ## Goals
 
-- Only play page for now.
-- Responsive layout from 1 (or 2?) to 3 columns.
+- Responsive layout from 1 to 3 columns.
 - Handle large desktop screens, all the way to tiny vertical cell phone.
 - The board should occupy as much space as possible.
 - The entire board must be above floating point.
