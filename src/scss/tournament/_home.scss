@@ -1,5 +1,5 @@
-$col-2: $x-small;
-$col-3: $large;
+$mq-col-2: $mq-x-small;
+$mq-col-3: $mq-large;
 
 .tour-home {
   display: grid;
@@ -8,7 +8,7 @@ $col-3: $large;
   'leaderboard'
   'featured';
 
-  @include breakpoint($col-2) {
+  @include breakpoint($mq-col-2) {
     grid-template-columns: 0 1fr 1fr 0;
     grid-template-rows: auto fit-content(20vh);
     grid-template-areas:
@@ -16,7 +16,7 @@ $col-3: $large;
     '. leaderboard featured .'
     '. finished    finished .';
   }
-  @include breakpoint($col-3) {
+  @include breakpoint($mq-col-3) {
     grid-template-columns: 1fr 350px minmax(auto, 900px) 1fr;
     grid-template-rows: auto fit-content(0);
     grid-template-areas:
@@ -47,7 +47,7 @@ $col-3: $large;
     // & .placeholder { height: 130rem };
     & .placeholder { height: 50rem };
     display: none;
-    @include breakpoint($col-2) {
+    @include breakpoint($mq-col-2) {
       display: block;
     }
   }

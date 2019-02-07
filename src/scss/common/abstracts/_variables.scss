@@ -1,26 +1,6 @@
 $font-path: "../font";
 
-/* Widths */
-$xx-small: (min-width 500px);
-$x-small: (min-width 650px);
-$small: (min-width 800px);
-$not-small: (max-width 799px);
-$medium: (min-width 1000px);
-$not-medium: (max-width 999px);
-$large: (min-width 1120px);
-
-$topnav-visible: $medium;
-$topnav-hidden: $not-medium;
-
-/* Heights */
-$short: (min-height 500px);
-$tall: (min-height 600px);
-
-$portrait: (orientation portrait);
-$landscape: (orientation landscape);
-
 $block-gap: 1.5vmin;
 
-$site-header-tall: $short;
 $site-header-tall-height: 50px;
 $site-header-short-height: 40px;

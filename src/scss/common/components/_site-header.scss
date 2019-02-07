@@ -16,16 +16,16 @@
   font-weight: normal;
   margin: 0 .5rem;
   display: none;
-  @include breakpoint($xx-small) {
+  @include breakpoint($mq-xx-small) {
     display: block;
   }
-  line-height: calc(#{$header-tiny} - 3px);
+  line-height: calc(#{$site-header-short-height} - 3px);
   font-size: 1.5rem;
-  @include breakpoint($short) {
-    line-height: $header-big;
+  @include breakpoint($mq-short) {
+    line-height: $site-header-tall-height;
     font-size: 1.8rem;
   }
-  @include breakpoint($site-header-tall $topnav-visible) {
+  @include breakpoint($mq-site-header-tall $mq-topnav-visible) {
     line-height: 44px;
     margin: 0 1rem;
   }
@@ -46,14 +46,14 @@
 
 .site-buttons {
   display: flex;
-  height: $header-tiny;
-  @include breakpoint($short) {
-    height: $header-big;
-  }
+  height: var(--site-header-height);
   align-items: center;
   & .link {
     color: $c-font;
     text-decoration: none;
     padding: 0 0.5rem;
+    &:hover {
+      color: $c-link;
+    }
   }
 }

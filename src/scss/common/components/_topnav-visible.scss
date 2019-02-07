@@ -1,4 +1,4 @@
-@include breakpoint($topnav-visible) {
+@include breakpoint($mq-topnav-visible) {
 
   .hamburger,
   .topnav-mask,
@@ -9,7 +9,7 @@
   #topnav {
     --nav-section: 26px;
     --nav-section-hover: 35px;
-    @include breakpoint($short) {
+    @include breakpoint($mq-short) {
       --nav-section: 40px;
       --nav-section-hover: 48px;
     }
@@ -23,10 +23,7 @@
       & > a {
         display: block;
         height: var(--nav-section);
-        line-height: $header-tiny;
-        @include breakpoint($short) {
-          line-height: $header-big;
-        }
+        line-height: var(--site-header-height);
         padding: 0 12px;
         text-transform: uppercase;
       }

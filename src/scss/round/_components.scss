@@ -1,7 +1,7 @@
-$zoom-enabled: $small $short;
+$mq-zoom-enabled: $mq-small $mq-short;
 #zoom-input {
   display: none;
-  @include breakpoint($zoom-enabled) {
+  @include breakpoint($mq-zoom-enabled) {
     display: block;
     position: fixed;
     bottom: 3px;

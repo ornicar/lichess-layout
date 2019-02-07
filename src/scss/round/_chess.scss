@@ -1,6 +1,6 @@
-$col-2: ($x-small, $landscape);
+$mq-col-2: ($mq-x-small, $mq-landscape);
 
-$room-for-moves: $x-small $short;
+$mq-room-for-moves: $mq-x-small $mq-short;
 
 $col-1-player-clock-height: 60px;
 $col-1-clock-height: 60px;
@@ -20,7 +20,7 @@ $col-2-actions-height: 60px;
   $center
   minmax(200px, auto)
   $right;
-  @include breakpoint($zoom-enabled) {
+  @include breakpoint($mq-zoom-enabled) {
     grid-template-columns:
     $left
     minmax(200px, calc((100vh * var(--scale) - var(--site-header-height))))
@@ -78,7 +78,7 @@ $col-2-actions-height: 60px;
     ". board . clock-pl"
     ". board . mat-pl"
     ". board . .";
-    @include breakpoint($room-for-moves) {
+    @include breakpoint($mq-room-for-moves) {
       @include col-2-grid-rows-with-moves($col-2-moves-height);
       grid-template-areas:
       ". board . ."
@@ -111,13 +111,13 @@ $col-2-actions-height: 60px;
 
   &__board {
     grid-area: board;
-    @include breakpoint($col-2) {
+    @include breakpoint($mq-col-2) {
       /* Align vertically when zoomed out */
       display: flex;
       flex-flow: column;
       justify-content: center;
     }
-    @include breakpoint($portrait) {
+    @include breakpoint($mq-portrait) {
       /* In portrait single column, make sure both clocks and the board fit in the viewport.
        * If they don't, limit the board width */
 max-width: calc(100vh - var(--site-header-height) - (#{$col-1-clock-height} * 2));
@@ -143,7 +143,7 @@ max-width: calc(100vh - var(--site-header-height) - (#{$col-1-clock-height} * 2)
     grid-area: user-pl;
   }
   &__clock {
-    @include breakpoint($x-small) {
+    @include breakpoint($mq-x-small) {
       width: 70%;
     }
   }
@@ -153,7 +153,7 @@ max-width: calc(100vh - var(--site-header-height) - (#{$col-1-clock-height} * 2)
     grid-area: moves;
     @include breakpoint($col-2) {
       display: none;
-      @include breakpoint($room-for-moves) {
+      @include breakpoint($mq-room-for-moves) {
         height: 15vh;
         display: flex;
       }
