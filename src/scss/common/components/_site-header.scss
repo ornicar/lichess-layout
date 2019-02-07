@@ -21,12 +21,12 @@
   }
   line-height: calc(#{$site-header-short-height} - 3px);
   font-size: 1.5rem;
-  @include breakpoint($mq-short) {
+  @include breakpoint($mq-site-header-tall) {
     line-height: $site-header-tall-height;
     font-size: 1.8rem;
   }
   @include breakpoint($mq-site-header-tall $mq-topnav-visible) {
-    line-height: 44px;
+    line-height: 52px;
     margin: 0 1rem;
   }
   & a {
@@ -46,10 +46,10 @@
 
 .site-buttons {
   display: flex;
-  height: var(--site-header-height);
   align-items: center;
   & .link {
     color: $c-font;
+    font-size: 1.1rem;
     text-decoration: none;
     padding: 0 0.5rem;
     &:hover {
