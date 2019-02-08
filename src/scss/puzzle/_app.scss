@@ -58,6 +58,7 @@ $mq-col-2: ($mq-small, $mq-landscape);
     }
   }
   &__state {
+    margin-top: $block-gap;
     grid-area: state;
     placeholder { height: 100% }
   }

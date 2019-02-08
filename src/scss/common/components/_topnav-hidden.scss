@@ -148,6 +148,8 @@
     /* prevent scrolling while topnav is open */
     overflow: hidden;
     /* awkwardly make up for the disappearance of the scroll bar */
-    padding-right: 15px;
+    /* actually don't, since on mobile devices the scrool bar
+     * has no width, and that menu is mainly for mobile. */
+    // padding-right: 15px;
   }
 }
