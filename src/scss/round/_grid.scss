@@ -22,7 +22,7 @@ $mq-col-3: $mq-large;
   @include breakpoint($mq-col-3) {
     grid-template-columns:
     minmax(200px, 300px)
-    minmax(600px, calc(100vh * var(--board-scale) - $site-header-height))
+    minmax(600px, calc(100vh * var(--board-scale) - #{$site-header-height}))
     minmax(200px, 300px);
     grid-template-areas:
     'info-chat  chess     chess      '
