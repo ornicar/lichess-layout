@@ -95,8 +95,15 @@
     line-height: 40px;
     box-shadow: 2px 3px 6px hsla(0, 0, 0%, 0.3);
     border-radius: 0 3px 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 80%;
+    @include breakpoint($mq-xx-small) {
+      max-width: 70%;
+    }
 
     & section {
+      flex: 1 0 50%;
       margin-top: 1rem;
       & > a {
         font-weight: bold;
@@ -150,6 +157,6 @@
     /* awkwardly make up for the disappearance of the scroll bar */
     /* actually don't, since on mobile devices the scrool bar
      * has no width, and that menu is mainly for mobile. */
-    // padding-right: 15px;
-  }
+  // padding-right: 15px;
+}
 }
