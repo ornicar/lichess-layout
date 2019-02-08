@@ -1,19 +1,5 @@
 .page-single {
 
-  grid-column-gap: 0;
-
-  grid-template-columns:
-  var(--content-margin)
-  1fr
-  minmax(auto, 1200px)
-  1fr
-  var(--content-margin);
-  grid-template-areas: '. . content . .';
-
-  &__content {
-    grid-area: content;
-  }
-
   &__content {
     & placeholder { height: 40rem; }
   }

@@ -82,7 +82,7 @@
 
   #topnav {
     position: fixed;
-    top: var(--site-header-height);
+    top: $site-header-height;
     bottom: 0;
     left: 0;
     background: $c-background-clear;

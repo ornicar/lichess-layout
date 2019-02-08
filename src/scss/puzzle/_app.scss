@@ -1,7 +1,7 @@
 $mq-col-2: ($mq-small, $mq-landscape);
 
 @function board-width($mult) {
-  @return calc((100vh * var(--board-scale) - var(--site-header-height)) * #{$mult});
+  @return calc((100vh * var(--board-scale) - #{$site-header-height}) * #{$mult});
 }
 
 @mixin col-2-grid-columns-with-gaps($sides, $center) {

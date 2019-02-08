@@ -6,3 +6,7 @@ $border-radius: 3px;
 
 $site-header-tall-height: 60px;
 $site-header-short-height: 40px;
+
+/* var aliases */
+$main-margin: var(--main-margin);
+$site-header-height: var(--site-header-height);

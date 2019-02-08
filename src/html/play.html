@@ -6,7 +6,10 @@ js: round
 <main class="round">
   <div class="round__chess">
     <div class="round__chess__board">
-      <div class="cg-board-wrap orientation-white" id="main-board"></div>
+      <div class="cg-board-wrap orientation-white" id="main-board">
+        <!-- Required for cg-board-wrap to scale correctly on page load -->
+        <svg></svg>
+      </div>
     </div>
     <div class="round__chess__material-op">PPP NN</div>
     <div class="round__chess__clock-op placeholder">00:45</div>

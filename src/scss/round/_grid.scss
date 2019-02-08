@@ -10,29 +10,27 @@ $mq-col-3: $mq-large;
   }
 
   grid-template-areas:
-  "chess"
-  "info-chat"
-  "ct-boards";
+  'chess'
+  'info-chat'
+  'ct-boards';
 
   /* 2 columns */
   @include breakpoint($mq-col-2) {
     grid-template-columns: 2fr 3fr;
     grid-template-areas:
-    "chess      chess"
-    "info-chat  ct-boards";
+    'chess      chess'
+    'info-chat  ct-boards';
   }
 
   /* 3 columns */
   @include breakpoint($mq-col-3) {
     grid-template-columns:
-    minmax(0, 1fr)
     minmax(200px, 300px)
-    minmax(600px, calc(100vh * var(--board-scale) - var(--site-header-height)))
-    minmax(200px, 300px)
-    minmax(0, 1fr);
+    minmax(600px, calc(100vh * var(--board-scale) - $site-header-height))
+    minmax(200px, 300px);
     grid-template-areas:
-    ". info-chat  chess     chess       ."
-    ". under-chat ct-boards under-table .";
+    'info-chat  chess     chess      '
+    "under-chat ct-boards under-table";
   }
 }
 

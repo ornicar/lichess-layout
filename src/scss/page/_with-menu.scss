@@ -2,24 +2,17 @@ $mq-col-2: $mq-subnav-side;
 
 .page-menu {
 
-  grid-template-columns: 0 auto 0;
   grid-template-areas:
-  '. menu .'
-  '. content .';
+  'menu'
+  'content';
 
   grid-column-gap: 0;
 
   @include breakpoint($mq-col-2) {
-    grid-template-columns:
-    var(--content-margin)
-    1fr
-    max-content
-    minmax(max-content, 1000px)
-    1fr
-    var(--content-margin);
+    grid-template-columns: max-content minmax(max-content, 1000px);
     grid-template-rows: min-content;
     grid-template-areas:
-    '. . menu content . .';
+    'menu content';
   }
 
   &__menu {

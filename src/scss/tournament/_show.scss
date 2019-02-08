@@ -21,22 +21,22 @@ $mq-col-3: $mq-large;
     'games games';
   }
   @include breakpoint($mq-col-2) {
-    grid-template-columns: 0 minmax(200px, 1fr) 2fr 0;
+    grid-template-columns: minmax(200px, 1fr) 2fr;
     grid-template-rows: min-content 1fr;
     grid-template-areas:
-    '. info  app .'
-    '. chat  app .'
-    '. games tv  .';
+    'info  app'
+    'chat  app'
+    'games tv ';
   }
   @include breakpoint($mq-col-3) {
-    grid-template-columns: auto minmax(200px, 300px) minmax(500px, 700px) minmax(200px, 300px) auto;
+    grid-template-columns: minmax(200px, 300px) minmax(500px, 700px) minmax(200px, 300px);
     // grid-template-rows: auto fit-content(0) fit-content(0);
     grid-template-rows: repeat(4, fit-content(0));
     grid-template-areas:
-    '. info app tv .'
-    '. chat app tv .'
-    '. chat app games .'
-    '. .    app games .';
+    'info app tv'
+    'chat app tv'
+    'chat app games'
+    '.    app games';
   }
 
   & .placeholder {

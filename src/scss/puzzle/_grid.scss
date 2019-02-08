@@ -25,15 +25,13 @@ $mq-col-3: $mq-large;
 
   @include breakpoint($mq-col-3) {
     grid-template-columns:
-    minmax(0, 1fr)
     minmax(200px, 300px)
-    minmax(600px, calc(100vh * var(--board-scale) - var(--site-header-height)))
-    minmax(200px, 300px)
-    minmax(0, 1fr);
+    minmax(600px, calc(100vh * var(--board-scale) - $site-header-height))
+    minmax(200px, 300px);
     grid-template-areas:
-    ". meta   app app ."
-    ". rating app app ."
-    ". .      app app .";
+    'meta   app app'
+    "rating app app"
+    ".      app app";
   }
 }
 

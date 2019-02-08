@@ -3,56 +3,56 @@ $mq-col-3: $mq-large;
 
 .lobby {
 
-  grid-template-rows: min-content minmax(400px, calc(80vh - var(--site-header-height) - 150px));
+  grid-template-rows: min-content minmax(400px, calc(80vh - $site-header-height - 150px));
 
   grid-template-areas:
-  "play"
-  "app"
-  "side"
-  "leader"
-  "tv"
-  "puzzle"
-  "winner"
-  "tours"
-  "simuls"
-  "forum"
-  "blog"
-  "patron"
-  "about";
+  'play'
+  'app'
+  'side'
+  'leader'
+  'tv'
+  'puzzle'
+  'winner'
+  'tours'
+  'simuls'
+  'forum'
+  'blog'
+  'patron'
+  'about';
 
   @include breakpoint($mq-col-2) {
 
-    grid-template-columns: 1fr repeat(3, minmax(150px, 350px)) 1fr;
+    grid-template-columns: repeat(3, minmax(150px, 350px));
 
-    grid-template-rows: min-content minmax(500px, calc(75vh - var(--site-header-height) - 200px));
+    grid-template-rows: min-content minmax(500px, calc(75vh - $site-header-height - 200px));
 
     grid-template-areas:
-    ". play   app    app    ."
-    ". side   app    app    ."
-    ". tv     leader winner ."
-    ". puzzle tours  tours  ."
-    ". .      simuls simuls ."
-    ". .      forum  forum  ."
-    ". .      blog   blog   ."
-    ". .      patron patron ."
-    ". .      about  about  .";
+    'play   app    app   '
+    'side   app    app   '
+    'tv     leader winner'
+    'puzzle tours  tours '
+    '.      simuls simuls'
+    '.      forum  forum '
+    '.      blog   blog  '
+    '.      patron patron'
+    '.      about  about ';
   }
 
   @include breakpoint($mq-col-3) {
 
-    grid-template-columns: 1fr repeat(4, minmax(150px, 350px)) 1fr;
+    grid-template-columns: repeat(4, minmax(150px, 350px));
 
-    grid-template-rows: minmax(500px, calc(75vh - var(--site-header-height)));
+    grid-template-rows: minmax(500px, calc(75vh - $site-header-height));
 
     grid-template-areas:
-    ". side   app    app    play   ."
-    ". tv     leader winner puzzle ."
-    ". .      tours  tours  .      ."
-    ". .      simuls simuls .      ."
-    ". .      forum  forum  .      ."
-    ". .      blog   blog   .      ."
-    ". .      patron patron .      ."
-    ". .      about  about  .      .";
+    'side   app    app    play  '
+    'tv     leader winner puzzle'
+    '.      tours  tours  .     '
+    '.      simuls simuls .     '
+    '.      forum  forum  .     '
+    '.      blog   blog   .     '
+    '.      patron patron .     '
+    '.      about  about  .     ';
   }
 
   &__side { grid-area: side; }

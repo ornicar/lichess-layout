@@ -34,7 +34,9 @@
         <div class="dasher"><a id="user_tag" class="toggle link">layout-tester</a><div id="dasher_app" class="dropdown"></div></div>
       </div>
     </header>
-    {{ content | safe }}
+    <div id="main-wrap">
+      {{ content | safe }}
+    </div>
     <script src="../../assets/js/chessground.min.js"></script>
     <script src="../../assets/js/site.js"></script>
     {% if js %}<script src="../../assets/js/{{ js }}.js"></script>{% endif %}
