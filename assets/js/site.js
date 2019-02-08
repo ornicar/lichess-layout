@@ -4,7 +4,7 @@ document.querySelector('#topnav-toggle').addEventListener('change', e => {
 
 window.onload = function() {
   Array.from(document.getElementsByClassName('mini-board'))
-    .forEach(Chessground);
+    .forEach(el => Chessground(el, {viewOnly: true}));
 }
 
 function resizeBoard() {

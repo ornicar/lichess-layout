@@ -1,0 +1,46 @@
+$mq-col-2: ($mq-x-small, $mq-landscape);
+
+@mixin col-2-grid-columns-with-gaps($sides, $center) {
+  grid-template-columns:
+  $sides
+  minmax(20vw, calc((100vh * var(--board-scale) - #{$site-header-height})))
+  $center
+  minmax(20vw, auto)
+  $sides;
+}
+
+.analyse__app {
+
+  display: grid;
+
+  grid-template-areas:
+  'board'
+  'side';
+
+  @include breakpoint($mq-col-2) {
+    @include col-2-grid-columns-with-gaps(auto, $block-gap);
+    grid-template-areas: '. board . side .';
+  }
+
+  @include breakpoint($mq-col-3) {
+    @include col-2-grid-columns-with-gaps(0, $block-gap);
+  }
+
+  &__board {
+    grid-area: board;
+    @include breakpoint($mq-col-2) {
+      /* Align vertically when zoomed out */
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+    }
+    & .cg-board-wrap {
+      @extend %square;
+    }
+  }
+  &__side {
+    grid-area: side;
+    overflow-y: auto;
+    placeholder { height: 100%; }
+  }
+}

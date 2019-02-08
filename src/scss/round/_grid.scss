@@ -3,11 +3,7 @@ $mq-col-3: $mq-large;
 
 .round {
 
-  --board-scale: 1;
-  @include breakpoint($mq-zoom-enabled) {
-    // --zoom: 85; defined in the HTML, loaded from server saved config
-    --board-scale: calc((var(--zoom) / 100) * 0.5 + 0.5);
-  }
+  @include board-scale-config;
 
   grid-template-areas:
   'chess'
@@ -32,31 +28,31 @@ $mq-col-3: $mq-large;
     'info-chat  chess     chess      '
     "under-chat ct-boards under-table";
   }
-}
 
-.round__chess { grid-area: chess; }
+  &__chess { grid-area: chess; }
 
-.round__info-chat {
-  grid-area: info-chat;
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.round__ct-boards { grid-area: ct-boards; }
-
-.round__under-chat {
-  grid-area: under-chat;
-  display: none;
-  @include breakpoint($mq-col-3) {
-    height: 200px;
+  &__info-chat {
+    grid-area: info-chat;
     display: flex;
+    flex-flow: column nowrap;
   }
-}
-.round__under-table {
-  grid-area: under-table;
-  display: none;
-  @include breakpoint($mq-col-3) {
-    height: 200px;
-    display: flex;
+
+  &__ct-boards { grid-area: ct-boards; }
+
+  &__under-chat {
+    grid-area: under-chat;
+    display: none;
+    @include breakpoint($mq-col-3) {
+      height: 200px;
+      display: flex;
+    }
+  }
+  &__under-table {
+    grid-area: under-table;
+    display: none;
+    @include breakpoint($mq-col-3) {
+      height: 200px;
+      display: flex;
+    }
   }
 }

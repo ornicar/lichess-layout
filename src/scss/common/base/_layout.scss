@@ -13,7 +13,7 @@ body {
 
 #main-wrap {
   display: grid;
-  grid-template-columns: $main-margin 1fr minmax(auto, 1300px) 1fr $main-margin;
+  grid-template-columns: $main-margin 1fr minmax(auto, #{$main-max-width}) 1fr $main-margin;
   grid-template-areas: '. . main . .';
 }
 

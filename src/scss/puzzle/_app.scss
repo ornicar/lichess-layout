@@ -24,7 +24,7 @@ $mq-col-2: ($mq-small, $mq-landscape);
   'state    moves';
 
   @include breakpoint($mq-col-2) {
-    @include col-2-grid-columns-with-gaps(auto, minmax($block-gap, 0));
+    @include col-2-grid-columns-with-gaps(auto, $block-gap);
     grid-template-rows: auto board-width(2/3) board-width(1/3) auto;
     grid-template-areas:
     '. board . . .'

@@ -16,7 +16,7 @@ $col-2-actions-height: 60px;
 @mixin col-2-grid-columns-with-gaps($sides, $center) {
   grid-template-columns:
   $sides
-  minmax(200px, calc((100vh * var(--board-scale) - $site-header-height)))
+  minmax(200px, calc((100vh * var(--board-scale) - #{$site-header-height})))
   $center
   minmax(200px, auto)
   $sides;
@@ -112,7 +112,7 @@ $col-2-actions-height: 60px;
     @include breakpoint($mq-portrait) {
       /* In portrait single column, make sure both clocks and the board fit in the viewport.
        * If they don't, limit the board width */
-max-width: calc(100vh - $site-header-height - (#{$col-1-clock-height} * 2));
+max-width: calc(100vh - #{$site-header-height} - (#{$col-1-clock-height} * 2));
     }
     & .cg-board-wrap {
       @extend %square;

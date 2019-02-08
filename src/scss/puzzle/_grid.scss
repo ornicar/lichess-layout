@@ -3,11 +3,7 @@ $mq-col-3: $mq-large;
 
 .puzzle {
 
-  --board-scale: 1;
-  @include breakpoint($mq-zoom-enabled) {
-    // --zoom: 85; defined in the HTML, loaded from server saved config
-    --board-scale: calc((var(--zoom) / 100) * 0.5 + 0.5);
-  }
+  @include board-scale-config;
 
   display: grid;
 
@@ -33,16 +29,16 @@ $mq-col-3: $mq-large;
     "rating app app"
     ".      app app";
   }
-}
 
-.puzzle__app {
-  grid-area: app;
-}
-.puzzle__meta {
-  grid-area: meta;
-  & placeholder { height: 14rem }
-}
-.puzzle__rating {
-  grid-area: rating;
-  & placeholder { height: 14rem }
+  &__app {
+    grid-area: app;
+  }
+  &__meta {
+    grid-area: meta;
+    & placeholder { height: 14rem }
+  }
+  &__rating {
+    grid-area: rating;
+    & placeholder { height: 14rem }
+  }
 }

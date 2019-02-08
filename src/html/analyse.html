@@ -1,0 +1,45 @@
+---
+layout: layout.html
+css: analyse.light
+js: round
+---
+<main class="analyse">
+
+  <div class="analyse__app">
+    <div class="analyse__app__board">
+      <div class="cg-board-wrap orientation-white" id="main-board">
+        <!-- Required for cg-board-wrap to scale correctly on page load -->
+        <svg></svg>
+      </div>
+    </div>
+    <div class="analyse__app__side"><placeholder>PGN moves</placeholder></div>
+  </div>
+  <div class="analyse__info-chat">
+    <div class="analyse__info placeholder">game info</div>
+    <div class="chat__lines placeholder">chat lines</div>
+    <div class="chat__input placeholder">chat input</div>
+  </div>
+
+  <div class="analyse__under-chat">
+    <placeholder>under chat</placeholder>
+  </div>
+
+  <div class="analyse__features">
+    <div class="analyse__features__container">
+      <placeholder>Computer analysis</placeholder>
+    </div>
+    <div class="analyse__features__tabs">
+      <a>Computer analysis</a>
+      <a>Move times</a>
+      <a>Crosstable</a>
+      <a>FEN &amp; pGN</a>
+    </div>
+  </div>
+
+  <div class="analyse__acpl">
+    <placeholder>acpl</placeholder>
+  </div>
+
+  {% include "debug-zoom.html" %}
+</main>
+

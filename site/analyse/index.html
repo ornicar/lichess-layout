@@ -8,7 +8,7 @@
     <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"> -->
     <meta name="viewport"content="width=device-width,initial-scale=1,viewport-fit=cover"/>
     <style>main { --zoom: 80; }</style>
-    <link href="../../assets/css/lobby.light.css" rel="stylesheet" />
+    <link href="../../assets/css/analyse.light.css" rel="stylesheet" />
   </head>
   <body class="cburnett blue">
 
@@ -35,93 +35,52 @@
       </div>
     </header>
     <div id="main-wrap">
-      <main class="lobby">
-  <div class="lobby__side">
-    <div class="lobby__streams">
-      <placeholder>streams</placeholder>
+      <main class="analyse">
+
+  <div class="analyse__app">
+    <div class="analyse__app__board">
+      <div class="cg-board-wrap orientation-white" id="main-board">
+        <!-- Required for cg-board-wrap to scale correctly on page load -->
+        <svg></svg>
+      </div>
     </div>
-    <div class="lobby__timeline">
-      <placeholder>timeline</placeholder>
+    <div class="analyse__app__side"><placeholder>PGN moves</placeholder></div>
+  </div>
+  <div class="analyse__info-chat">
+    <div class="analyse__info placeholder">game info</div>
+    <div class="chat__lines placeholder">chat lines</div>
+    <div class="chat__input placeholder">chat input</div>
+  </div>
+
+  <div class="analyse__under-chat">
+    <placeholder>under chat</placeholder>
+  </div>
+
+  <div class="analyse__features">
+    <div class="analyse__features__container">
+      <placeholder>Computer analysis</placeholder>
+    </div>
+    <div class="analyse__features__tabs">
+      <a>Computer analysis</a>
+      <a>Move times</a>
+      <a>Crosstable</a>
+      <a>FEN &amp; pGN</a>
     </div>
   </div>
 
-  <div class="lobby__app">
-    <div class="lobby__app__tabs">
-      <a>Quick pairing</a>
-      <a>Lobby</a>
-      <a>Correspondence</a>
-      <a>4 games in play</a>
-    </div>
-    <div class="lobby__app__container">lobby</div>
+  <div class="analyse__acpl">
+    <placeholder>acpl</placeholder>
   </div>
 
-  <div class="lobby__play-counters">
-    <div class="lobby__play-buttons">
-      <button class="button">Create a game</button>
-      <button class="button">Play with a friend</button>
-      <button class="button">Play with the machine</button>
-    </div>
-    <div class="lobby__counters">
-      <div>34,550 players</div>
-      <div>12,781 games in play</div>
-    </div>
-  </div>
+  <input type="range" id="zoom-input" min="0" max="100" value="85" />
 
-  <div class="lobby__tv">
-    <div class="mini-board cg-board-wrap"></div>
-    <placeholder>
-      playerA VS playerB<br>
-      clocks and stuff
-    </placeholder>
-  </div>
-
-  <div class="lobby__puzzle">
-    <div class="board">
-      <div class="mini-board cg-board-wrap"></div>
-    </div>
-    <placeholder>
-      PotD<br>
-      white to move
-    </placeholder>
-  </div>
-
-  <div class="lobby__leaderboard">
-    <placeholder>Leaderboard</placeholder>
-  </div>
-
-  <div class="lobby__winners">
-    <placeholder>Winners</placeholder>
-  </div>
-
-  <div class="lobby__tournaments">
-    <placeholder>Open tournaments</placeholder>
-  </div>
-
-  <div class="lobby__simuls">
-    <placeholder>Open simuls</placeholder>
-  </div>
-
-  <div class="lobby__forum">
-    <placeholder>Forum activity</placeholder>
-  </div>
-
-  <div class="lobby__blog">
-    <placeholder>Latest updates</placeholder>
-  </div>
-
-  <div class="lobby__patron">
-    <placeholder>Patron &amp; Swag store</placeholder>
-  </div>
-
-  <div class="lobby__about">
-    <placeholder>About lichess.org</placeholder>
-  </div>
 </main>
+
 
     </div>
     <script src="../../assets/js/chessground.min.js"></script>
     <script src="../../assets/js/site.js"></script>
-    
+    <script src="../../assets/js/round.js"></script>
 
   </body>
 </html>
