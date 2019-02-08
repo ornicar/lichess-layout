@@ -14,13 +14,12 @@
       --nav-section-hover: 53px;
     }
     display: flex;
-    & a {
-      color: $c-font;
-    }
     & section {
       position: relative;
       height: var(--nav-section);
       & > a {
+        color: $c-font-dim;
+        text-shadow: $text-shadow;
         display: block;
         height: var(--nav-section);
         line-height: $site-header-height;
@@ -35,13 +34,12 @@
       &:active {
         & > a {
           height: var(--nav-section-hover);
-          background: $c-background-clear;
+          background: $c-header-dropdown;
           color: $c-font-clear;
           border-color: $c-primary;
         }
         & div {
           display: block;
-          border-left: 2px solid $c-primary;
         }
       }
     }
@@ -49,10 +47,11 @@
       display: none;
       position: absolute;
       left: 0;
-      background: $c-background-clear;
+      background: $c-header-dropdown;
       width: 10rem;
       box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.3);
       border-radius: 0 3px 3px 3px;
+      border-left: 2px solid $c-primary;
       & a {
         display: block;
         padding: .4rem .7rem;

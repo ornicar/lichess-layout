@@ -1,3 +1,5 @@
+/* Colors */
+
 @function c-dimmer($color, $weight: 17%) {
   @return mix(hsl(0, 90%, 100%), $color, $weight);
 }
@@ -8,7 +10,7 @@
 $c-background: hsl(0, 0%, 93%);
 $c-background-dim: hsl(0, 0%, 87%);
 $c-background-clear: hsl(0, 0%, 100%);
-$c-background-inv: hsl(209, 19%, 16%);
+// $c-background-inv: hsl(209, 19%, 16%);
 
 $c-body-gradient: hsl(0, 0%, 84%);
 
@@ -48,10 +50,18 @@ $c-border: hsl(0, 0%, 80%);
 
 $c-page-mask: hsla(0, 0, 0%, 0.5);
 
+$c-header-dropdown: $c-background-clear;
+
+$c-font-shadow: white;
+
 /* Borders */
 
 $border-width: 1px;
 $border-style: solid;
 $borders: $border-width $border-style $c-border;
 
+/* Shadows */
+
 $box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+
+$text-shadow: 0 1px 1px $c-font-shadow;
