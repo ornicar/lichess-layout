@@ -1,17 +1,17 @@
-$mq-padded: $mq-x-small;
-
 .page-single {
 
   grid-column-gap: 0;
 
-  grid-template-columns: 0 minmax(auto, 1200px) 0;
-  &__content {
-    grid-area: 1 / 2 / 2 / 3;
-  }
+  grid-template-columns:
+  var(--content-margin)
+  1fr
+  minmax(auto, 1200px)
+  1fr
+  var(--content-margin);
+  grid-template-areas: '. . content . .';
 
-  @include breakpoint($mq-padded) {
-    grid-column-gap: $block-gap;
-    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+  &__content {
+    grid-area: content;
   }
 
   &__content {

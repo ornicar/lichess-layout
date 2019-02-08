@@ -12,6 +12,11 @@ body {
     --site-header-height: #{$site-header-tall-height};
   }
 
+  --content-margin: 0;
+  @include breakpoint($mq-medium) {
+    --content-margin: #{$block-gap};
+  }
+
   margin-bottom: $block-gap;
 }
 

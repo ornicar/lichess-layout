@@ -1,4 +1,3 @@
-$mq-padded: $mq-x-small;
 $mq-col-2: $mq-subnav-side;
 
 .page-menu {
@@ -10,12 +9,14 @@ $mq-col-2: $mq-subnav-side;
 
   grid-column-gap: 0;
 
-  @include breakpoint($mq-padded) {
-    grid-template-columns: $block-gap auto $block-gap;
-  }
-
   @include breakpoint($mq-col-2) {
-    grid-template-columns: $block-gap 1fr max-content minmax(max-content, 1000px) 1fr $block-gap;
+    grid-template-columns:
+    var(--content-margin)
+    1fr
+    max-content
+    minmax(max-content, 1000px)
+    1fr
+    var(--content-margin);
     grid-template-rows: min-content;
     grid-template-areas:
     '. . menu content . .';
